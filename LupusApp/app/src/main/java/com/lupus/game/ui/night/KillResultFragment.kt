@@ -40,6 +40,7 @@ class KillResultFragment : Fragment() {
                 GamePhase.GAME_OVER -> findNavController().navigate(R.id.action_kill_result_to_result)
                 GamePhase.DAY_VOTE  -> findNavController().navigate(R.id.action_kill_result_to_day)
                 GamePhase.NIGHT_SEER -> findNavController().navigate(R.id.action_kill_result_to_night_seer)
+                GamePhase.VIGILANTE -> findNavController().navigate(R.id.action_kill_result_to_vigilante)
                 else -> findNavController().navigate(R.id.action_kill_result_to_day)
             }
         }

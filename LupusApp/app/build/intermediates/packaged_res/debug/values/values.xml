@@ -19,6 +19,7 @@
     <color name="text_dark_secondary">#4A4A6A</color>
     <color name="text_primary">#FFFFFF</color>
     <color name="text_secondary">#A0A8C0</color>
+    <color name="vigilante_red">#9c1116</color>
     <color name="villager_blue">#64B5F6</color>
     <color name="wolf_red">#FF4444</color>
     <string name="app_name">Lupus in Fabula</string>

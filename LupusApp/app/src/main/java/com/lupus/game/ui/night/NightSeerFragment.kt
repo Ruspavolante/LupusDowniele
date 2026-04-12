@@ -74,6 +74,7 @@ class NightSeerFragment : Fragment() {
                 if (isWolf) resources.getColor(R.color.wolf_red, null)
                 else resources.getColor(R.color.good_green, null)
             )
+            binding.btnReveal.visibility = View.GONE
         }
 
         binding.btnContinueToDay.setOnClickListener {

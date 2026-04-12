@@ -39,8 +39,15 @@
         android:label="Ruoli"
         tools:layout="@layout/fragment_roles_setup">
         <action
-            android:id="@+id/action_roles_to_game"
+            android:id="@+id/action_roles_to_seer"
             app:destination="@id/nightSeerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/setupFragment"
+            app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_roles_to_wolves"
+            app:destination="@id/nightWolvesFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/setupFragment"
@@ -64,6 +71,28 @@
             app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_night_seer_to_result"
+            app:destination="@id/gameResultFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/vigilanteFragment"
+        android:name="com.lupus.game.ui.night.VigilanteFragment"
+        android:label="Notte - Giustiziere"
+        tools:layout="@layout/fragment_vigilante">
+        <action
+            android:id="@+id/action_vigilante_to_wolves"
+            app:destination="@id/nightWolvesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_vigilante_to_day"
+            app:destination="@id/dayVoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_vigilante_to_result"
             app:destination="@id/gameResultFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"/>
@@ -101,6 +130,11 @@
             app:destination="@id/nightSeerFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"/>
+        <action
+            android:id="@+id/action_kill_result_to_vigilante"
+            app:destination="@id/vigilanteFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
     </fragment>
 
     <fragment
@@ -126,11 +160,18 @@
         android:label="Risultato Voto"
         tools:layout="@layout/fragment_vote_result">
         <action
-            android:id="@+id/action_vote_result_to_next_round"
+            android:id="@+id/action_vote_result_to_seer"
             app:destination="@id/nightSeerFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/nightSeerFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_vote_result_to_wolves"
+            app:destination="@id/nightWolvesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/nightWolvesFragment"
             app:popUpToInclusive="true"/>
     </fragment>
 

@@ -47,7 +47,7 @@ class RolesSetupFragment : Fragment() {
 
         binding.npSeers.apply {
             minValue = 0
-            maxValue = total - 1
+            maxValue = 1
             value = if (total >= 5) 1 else 0
             setOnValueChangedListener { _, _, _ -> updateVillagers() }
         }

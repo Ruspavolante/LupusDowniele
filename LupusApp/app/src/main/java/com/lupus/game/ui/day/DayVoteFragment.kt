@@ -29,7 +29,6 @@ class DayVoteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val state = viewModel.gameState.value ?: return
         binding.tvDayRound.text = "Round ${state.round} — Giorno ☀️"
         binding.tvAlivePlayers.text = "Giocatori vivi: ${state.alivePlayers.size}"

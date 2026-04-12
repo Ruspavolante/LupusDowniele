@@ -6,7 +6,8 @@ import kotlinx.parcelize.Parcelize
 enum class Role(val displayName: String, val isEvil: Boolean) {
     WOLF("Lupo", true),
     VILLAGER("Villico", false),
-    SEER("Veggente", false)
+    SEER("Veggente", false),
+    VIGILANTE("Giustiziere", false)
 }
 
 // Ogni fase ha una priorità — ordine crescente = ordine di esecuzione nel round
@@ -14,6 +15,7 @@ enum class GamePhase(val priority: Int) {
     SETUP(0),
     NIGHT_SEER(10),
     NIGHT_WOLVES(20),
+    VIGILANTE(25),
     DAY_VOTE(30),
     GAME_OVER(999)
 }
@@ -22,6 +24,7 @@ enum class GamePhase(val priority: Int) {
 // null = fase sempre presente
 val PHASE_ROLE_REQUIREMENT: Map<GamePhase, Role?> = mapOf(
     GamePhase.NIGHT_SEER to Role.SEER,
+    GamePhase.VIGILANTE to Role.VIGILANTE,
     GamePhase.NIGHT_WOLVES to Role.WOLF,
     GamePhase.DAY_VOTE to null
 )
@@ -35,7 +38,9 @@ data class Player(
     val id: Int,
     val name: String,
     val role: Role,
-    var isAlive: Boolean = true
+    var isAlive: Boolean = true,
+    var isLoaded: Boolean = true,
+    var killedInRound: Boolean = false
 ) : Parcelable
 
 data class GameState(
@@ -49,14 +54,14 @@ data class GameState(
     val alivePlayers get() = players.filter { it.isAlive }
     val aliveWolves get() = players.filter { it.isAlive && it.role == Role.WOLF }
     val aliveGood get() = players.filter { it.isAlive && !it.role.isEvil }
-    val aliveSeer get() = players.firstOrNull { it.isAlive && it.role == Role.SEER }
 
     // Costruisce la lista ordinata delle fasi attive per questo round
     // basandosi sui ruoli ancora vivi
     fun buildPhaseQueue(): List<GamePhase> {
+        print(players)
         return PHASE_ROLE_REQUIREMENT.entries
             .filter { (_, requiredRole) ->
-                requiredRole == null || players.any { it.role == requiredRole } // <-- rimosso it.isAlive
+                requiredRole == null || players.any { it.role == requiredRole }
             }
             .map { it.key }
             .sortedBy { it.priority }
