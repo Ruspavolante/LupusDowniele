@@ -33,7 +33,7 @@ class VoteResultFragment : Fragment() {
         }
 
         binding.btnNextRound.setOnClickListener {
-            findNavController().navigate(R.id.action_vote_result_to_night_wolves)
+            findNavController().navigate(R.id.action_vote_result_to_next_round)
         }
     }
 

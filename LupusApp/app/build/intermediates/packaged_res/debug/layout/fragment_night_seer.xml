@@ -83,7 +83,7 @@
         android:id="@+id/btn_continue_to_day"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="☀️ Vai al giorno"
+        android:text="Continua"
         android:textSize="18sp"
         android:background="@drawable/bg_button_primary"
         android:layout_margin="16dp"/>

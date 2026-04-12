@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lupus.game.R
 import com.lupus.game.databinding.FragmentNightSeerBinding
+import com.lupus.game.model.GamePhase
 import com.lupus.game.model.Player
 import com.lupus.game.model.Role
 import com.lupus.game.ui.adapters.PlayerSelectAdapter
@@ -32,24 +33,34 @@ class NightSeerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val state = viewModel.gameState.value ?: return
-        val seer = state.aliveSeer
+        val seer = state.players.firstOrNull { it.role == Role.SEER } // vivo O morto
 
-        binding.tvSeerName.text = "Chiama il veggente:\n${seer?.name ?: "—"}"
+        val seerIsAlive = seer?.isAlive == true
 
-        // Seer can inspect any alive player (excluding themselves)
-        val targets = state.alivePlayers.filter { it.id != seer?.id }
+        if (seerIsAlive) {
+            binding.tvSeerName.text = "Chiama il veggente:\n${seer!!.name}"
+        } else {
+            binding.tvSeerName.text = "Il veggente è morto — fase saltata"
+        }
+
+        // Targets: solo se il veggente è vivo
+        val targets = if (seerIsAlive)
+            state.alivePlayers.filter { it.id != seer!!.id }
+        else
+            emptyList()
 
         val adapter = PlayerSelectAdapter(targets) { player ->
             selectedPlayer = player
             binding.cardReveal.visibility = View.GONE
-            binding.btnReveal.isEnabled = true
         }
         binding.rvTargets.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTargets.adapter = adapter
 
+        // Bottone rivela: visibile solo se veggente vivo
+        binding.btnReveal.visibility = if (seerIsAlive) View.VISIBLE else View.GONE
+
         binding.btnReveal.setOnClickListener {
-            val target = selectedPlayer
-            if (target == null) {
+            val target = selectedPlayer ?: run {
                 Toast.makeText(requireContext(), "Seleziona un giocatore", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -66,8 +77,17 @@ class NightSeerFragment : Fragment() {
         }
 
         binding.btnContinueToDay.setOnClickListener {
-            viewModel.advanceToDay()
-            findNavController().navigate(R.id.action_night_seer_to_day)
+            viewModel.seerDone()
+            navigateToCurrentPhase(viewModel.gameState.value?.phase ?: GamePhase.DAY_VOTE)
+        }
+    }
+
+    private fun navigateToCurrentPhase(phase: GamePhase) {
+        when (phase) {
+            GamePhase.NIGHT_WOLVES -> findNavController().navigate(R.id.action_night_seer_to_wolves)
+            GamePhase.DAY_VOTE -> findNavController().navigate(R.id.action_night_seer_to_day)
+            GamePhase.GAME_OVER -> findNavController().navigate(R.id.action_night_seer_to_result)
+            else -> findNavController().navigate(R.id.action_night_seer_to_day)
         }
     }
 

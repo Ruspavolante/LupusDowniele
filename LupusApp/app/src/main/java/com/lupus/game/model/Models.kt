@@ -9,9 +9,22 @@ enum class Role(val displayName: String, val isEvil: Boolean) {
     SEER("Veggente", false)
 }
 
-enum class GamePhase {
-    SETUP, NIGHT_WOLVES, NIGHT_SEER, DAY_VOTE, GAME_OVER
+// Ogni fase ha una priorità — ordine crescente = ordine di esecuzione nel round
+enum class GamePhase(val priority: Int) {
+    SETUP(0),
+    NIGHT_SEER(10),
+    NIGHT_WOLVES(20),
+    DAY_VOTE(30),
+    GAME_OVER(999)
 }
+
+// Mappa: quale ruolo deve essere presente (vivo) per attivare quella fase
+// null = fase sempre presente
+val PHASE_ROLE_REQUIREMENT: Map<GamePhase, Role?> = mapOf(
+    GamePhase.NIGHT_SEER to Role.SEER,
+    GamePhase.NIGHT_WOLVES to Role.WOLF,
+    GamePhase.DAY_VOTE to null
+)
 
 enum class Winner {
     GOOD, EVIL, NONE
@@ -28,7 +41,7 @@ data class Player(
 data class GameState(
     val players: MutableList<Player>,
     var round: Int = 1,
-    var phase: GamePhase = GamePhase.NIGHT_WOLVES,
+    var phase: GamePhase = GamePhase.NIGHT_SEER,
     var lastKilledByWolves: Player? = null,
     var lastEliminatedByVote: Player? = null,
     var winner: Winner = Winner.NONE
@@ -37,6 +50,25 @@ data class GameState(
     val aliveWolves get() = players.filter { it.isAlive && it.role == Role.WOLF }
     val aliveGood get() = players.filter { it.isAlive && !it.role.isEvil }
     val aliveSeer get() = players.firstOrNull { it.isAlive && it.role == Role.SEER }
+
+    // Costruisce la lista ordinata delle fasi attive per questo round
+    // basandosi sui ruoli ancora vivi
+    fun buildPhaseQueue(): List<GamePhase> {
+        return PHASE_ROLE_REQUIREMENT.entries
+            .filter { (_, requiredRole) ->
+                requiredRole == null || players.any { it.role == requiredRole } // <-- rimosso it.isAlive
+            }
+            .map { it.key }
+            .sortedBy { it.priority }
+    }
+
+    // Dato la fase corrente, restituisce la prossima nella coda
+    // Se non c'è una prossima, il round è finito
+    fun nextPhase(): GamePhase? {
+        val queue = buildPhaseQueue()
+        val currentIndex = queue.indexOf(phase)
+        return queue.getOrNull(currentIndex + 1)
+    }
 
     fun checkWinner(): Winner {
         val wolves = aliveWolves.size

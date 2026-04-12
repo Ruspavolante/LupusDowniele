@@ -9,20 +9,40 @@ class GameViewModel : ViewModel() {
     val gameState = MutableLiveData<GameState>()
 
     fun startGame(playerNames: List<String>, wolfCount: Int, seerCount: Int) {
-        val players = mutableListOf<Player>()
         val roles = mutableListOf<Role>()
-
         repeat(wolfCount) { roles.add(Role.WOLF) }
         repeat(seerCount) { roles.add(Role.SEER) }
-        val villagerCount = playerNames.size - wolfCount - seerCount
-        repeat(villagerCount) { roles.add(Role.VILLAGER) }
+        repeat(playerNames.size - wolfCount - seerCount) { roles.add(Role.VILLAGER) }
         roles.shuffle()
 
-        playerNames.forEachIndexed { index, name ->
-            players.add(Player(index, name, roles[index]))
-        }
+        val players = playerNames.mapIndexed { index, name ->
+            Player(index, name, roles[index])
+        }.toMutableList()
 
-        gameState.value = GameState(players)
+        val state = GameState(players)
+        // Parti dalla prima fase della coda
+        state.phase = state.buildPhaseQueue().first()
+        gameState.value = state
+    }
+
+    // Avanza alla prossima fase della coda, o termina il round
+    private fun advancePhase(state: GameState) {
+        val winner = state.checkWinner()
+        if (winner != Winner.NONE) {
+            state.winner = winner
+            state.phase = GamePhase.GAME_OVER
+            return
+        }
+        val next = state.nextPhase()
+        if (next != null) {
+            state.phase = next
+        } else {
+            // Fine round: ricomincia dal primo della nuova coda
+            state.round++
+            state.lastKilledByWolves = null
+            state.lastEliminatedByVote = null
+            state.phase = state.buildPhaseQueue().first()
+        }
     }
 
     fun wolvesKill(targetId: Int) {
@@ -30,25 +50,13 @@ class GameViewModel : ViewModel() {
         val target = state.players.find { it.id == targetId } ?: return
         target.isAlive = false
         state.lastKilledByWolves = target
-        state.phase = GamePhase.NIGHT_SEER
-
-        val winner = state.checkWinner()
-        if (winner != Winner.NONE) {
-            state.winner = winner
-            state.phase = GamePhase.GAME_OVER
-        }
+        advancePhase(state)
         gameState.value = state
     }
 
-    fun skipSeer() {
+    fun seerDone() {
         val state = gameState.value ?: return
-        state.phase = GamePhase.DAY_VOTE
-        gameState.value = state
-    }
-
-    fun advanceToDay() {
-        val state = gameState.value ?: return
-        state.phase = GamePhase.DAY_VOTE
+        advancePhase(state)
         gameState.value = state
     }
 
@@ -57,17 +65,7 @@ class GameViewModel : ViewModel() {
         val target = state.players.find { it.id == targetId } ?: return
         target.isAlive = false
         state.lastEliminatedByVote = target
-
-        val winner = state.checkWinner()
-        if (winner != Winner.NONE) {
-            state.winner = winner
-            state.phase = GamePhase.GAME_OVER
-        } else {
-            state.round++
-            state.lastKilledByWolves = null
-            state.lastEliminatedByVote = null
-            state.phase = GamePhase.NIGHT_WOLVES
-        }
+        advancePhase(state)
         gameState.value = state
     }
 

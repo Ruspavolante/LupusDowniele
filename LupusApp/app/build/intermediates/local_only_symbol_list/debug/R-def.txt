@@ -41,11 +41,13 @@ id action_kill_result_to_night_seer
 id action_kill_result_to_result
 id action_names_to_roles
 id action_night_seer_to_day
+id action_night_seer_to_result
+id action_night_seer_to_wolves
 id action_night_wolves_to_kill_result
 id action_result_to_setup
 id action_roles_to_game
 id action_setup_to_names
-id action_vote_result_to_night_wolves
+id action_vote_result_to_next_round
 id btn_confirm_kill
 id btn_continue
 id btn_continue_to_day

@@ -43,10 +43,10 @@ com.lupus.game.app-lifecycle-runtime-2.7.0-41 C:\Users\d.amati\.gradle\caches\tr
 com.lupus.game.app-lifecycle-livedata-core-2.7.0-42 C:\Users\d.amati\.gradle\caches\transforms-4\edf4a6e04ad464e246f1e2a28a0d0dd2\transformed\lifecycle-livedata-core-2.7.0\res
 com.lupus.game.app-material-1.11.0-43 C:\Users\d.amati\.gradle\caches\transforms-4\f04cd6244f4b9203b834102570208274\transformed\material-1.11.0\res
 com.lupus.game.app-core-1.12.0-44 C:\Users\d.amati\.gradle\caches\transforms-4\f41efb211daceaa856bafe06654da2ba\transformed\core-1.12.0\res
-com.lupus.game.app-pngs-45 C:\Users\d.amati\Documents\Lupus\LupusApp\app\build\generated\res\pngs\debug
-com.lupus.game.app-resValues-46 C:\Users\d.amati\Documents\Lupus\LupusApp\app\build\generated\res\resValues\debug
-com.lupus.game.app-packageDebugResources-47 C:\Users\d.amati\Documents\Lupus\LupusApp\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.lupus.game.app-packageDebugResources-48 C:\Users\d.amati\Documents\Lupus\LupusApp\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.lupus.game.app-merged_res-49 C:\Users\d.amati\Documents\Lupus\LupusApp\app\build\intermediates\merged_res\debug
-com.lupus.game.app-debug-50 C:\Users\d.amati\Documents\Lupus\LupusApp\app\src\debug\res
-com.lupus.game.app-main-51 C:\Users\d.amati\Documents\Lupus\LupusApp\app\src\main\res
+com.lupus.game.app-pngs-45 C:\Users\d.amati\Documents\GitHub\LupusDowniele\LupusDowniele\LupusApp\app\build\generated\res\pngs\debug
+com.lupus.game.app-resValues-46 C:\Users\d.amati\Documents\GitHub\LupusDowniele\LupusDowniele\LupusApp\app\build\generated\res\resValues\debug
+com.lupus.game.app-packageDebugResources-47 C:\Users\d.amati\Documents\GitHub\LupusDowniele\LupusDowniele\LupusApp\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.lupus.game.app-packageDebugResources-48 C:\Users\d.amati\Documents\GitHub\LupusDowniele\LupusDowniele\LupusApp\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.lupus.game.app-merged_res-49 C:\Users\d.amati\Documents\GitHub\LupusDowniele\LupusDowniele\LupusApp\app\build\intermediates\merged_res\debug
+com.lupus.game.app-debug-50 C:\Users\d.amati\Documents\GitHub\LupusDowniele\LupusDowniele\LupusApp\app\src\debug\res
+com.lupus.game.app-main-51 C:\Users\d.amati\Documents\GitHub\LupusDowniele\LupusDowniele\LupusApp\app\src\main\res

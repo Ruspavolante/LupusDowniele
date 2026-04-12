@@ -35,17 +35,11 @@ class KillResultFragment : Fragment() {
             "🌙 Stanotte nessuno è morto"
 
         binding.btnContinue.setOnClickListener {
+            val state = viewModel.gameState.value ?: return@setOnClickListener
             when (state.phase) {
                 GamePhase.GAME_OVER -> findNavController().navigate(R.id.action_kill_result_to_result)
-                GamePhase.NIGHT_SEER -> {
-                    val hasSeer = state.aliveSeer != null
-                    if (hasSeer) {
-                        findNavController().navigate(R.id.action_kill_result_to_night_seer)
-                    } else {
-                        viewModel.skipSeer()
-                        findNavController().navigate(R.id.action_kill_result_to_day)
-                    }
-                }
+                GamePhase.DAY_VOTE  -> findNavController().navigate(R.id.action_kill_result_to_day)
+                GamePhase.NIGHT_SEER -> findNavController().navigate(R.id.action_kill_result_to_night_seer)
                 else -> findNavController().navigate(R.id.action_kill_result_to_day)
             }
         }

@@ -4228,20 +4228,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\d.amati\\Documents\\Lupus\\LupusApp\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "C:\\Users\\d.amati\\Documents\\GitHub\\LupusDowniele\\LupusDowniele\\LupusApp\\app\\src\\main\\res\\values\\themes.xml",
                     "from": {
-                        "startLines": "25,3,5,4,29,8,18,7,6,27,28,23,24,19,26,13,14,11,12,20,17",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "867,80,165,122,1047,298,622,253,206,954,996,778,820,667,908,455,499,359,406,713,579",
-                        "endColumns": "40,41,40,42,46,41,44,44,46,41,50,41,46,45,45,43,53,46,48,47,42",
-                        "endOffsets": "903,117,201,160,1089,335,662,293,248,991,1042,815,862,708,949,494,548,401,450,756,617"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "11",
+                        "endColumns": "12",
+                        "endOffsets": "646"
                     },
                     "to": {
-                        "startLines": "640,649,650,651,652,663,711,712,713,716,717,957,958,973,974,979,980,981,982,985,986",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "32500,33175,33217,33258,33301,34120,37380,37425,37470,37652,37694,55848,55890,56936,56982,57314,57358,57412,57459,57629,57677",
-                        "endColumns": "40,41,40,42,46,41,44,44,46,41,50,41,46,45,45,43,53,46,48,47,42",
-                        "endOffsets": "32536,33212,33253,33296,33343,34157,37420,37465,37512,37689,37740,55885,55932,56977,57023,57353,57407,57454,57503,57672,57715"
+                        "startLines": "6416",
+                        "startColumns": "4",
+                        "startOffsets": "448195",
+                        "endLines": "6425",
+                        "endColumns": "12",
+                        "endOffsets": "448754"
                     }
                 },
                 {
@@ -4332,6 +4334,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\d.amati\\Documents\\GitHub\\LupusDowniele\\LupusDowniele\\LupusApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "52",
+                        "endOffsets": "103"
+                    },
+                    "to": {
+                        "startLines": "2004",
+                        "startColumns": "4",
+                        "startOffsets": "132099",
+                        "endColumns": "52",
+                        "endOffsets": "132147"
+                    }
+                },
+                {
                     "source": "C:\\Users\\d.amati\\.gradle\\caches\\transforms-4\\2ff18e622e479bccccd436aae21272d5\\transformed\\jetified-customview-poolingcontainer-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3",
@@ -4346,25 +4365,6 @@
                         "startOffsets": "121434,122692",
                         "endColumns": "53,66",
                         "endOffsets": "121483,122754"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\d.amati\\Documents\\Lupus\\LupusApp\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "11",
-                        "endColumns": "12",
-                        "endOffsets": "646"
-                    },
-                    "to": {
-                        "startLines": "6416",
-                        "startColumns": "4",
-                        "startOffsets": "448195",
-                        "endLines": "6425",
-                        "endColumns": "12",
-                        "endOffsets": "448754"
                     }
                 },
                 {
@@ -4630,20 +4630,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\d.amati\\Documents\\Lupus\\LupusApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\d.amati\\Documents\\GitHub\\LupusDowniele\\LupusDowniele\\LupusApp\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "52",
-                        "endOffsets": "103"
+                        "startLines": "25,3,5,4,29,8,18,7,6,27,28,23,24,19,26,13,14,11,12,20,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "867,80,165,122,1047,298,622,253,206,954,996,778,820,667,908,455,499,359,406,713,579",
+                        "endColumns": "40,41,40,42,46,41,44,44,46,41,50,41,46,45,45,43,53,46,48,47,42",
+                        "endOffsets": "903,117,201,160,1089,335,662,293,248,991,1042,815,862,708,949,494,548,401,450,756,617"
                     },
                     "to": {
-                        "startLines": "2004",
-                        "startColumns": "4",
-                        "startOffsets": "132099",
-                        "endColumns": "52",
-                        "endOffsets": "132147"
+                        "startLines": "640,649,650,651,652,663,711,712,713,716,717,957,958,973,974,979,980,981,982,985,986",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "32500,33175,33217,33258,33301,34120,37380,37425,37470,37652,37694,55848,55890,56936,56982,57314,57358,57412,57459,57629,57677",
+                        "endColumns": "40,41,40,42,46,41,44,44,46,41,50,41,46,45,45,43,53,46,48,47,42",
+                        "endOffsets": "32536,33212,33253,33296,33343,34157,37420,37465,37512,37689,37740,55885,55932,56977,57023,57353,57407,57454,57503,57672,57715"
                     }
                 },
                 {

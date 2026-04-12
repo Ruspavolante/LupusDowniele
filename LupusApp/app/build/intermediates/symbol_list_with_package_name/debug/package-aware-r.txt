@@ -3228,12 +3228,14 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_names_to_roles
 id action_night_seer_to_day
+id action_night_seer_to_result
+id action_night_seer_to_wolves
 id action_night_wolves_to_kill_result
 id action_result_to_setup
 id action_roles_to_game
 id action_setup_to_names
 id action_text
-id action_vote_result_to_night_wolves
+id action_vote_result_to_next_round
 id actions
 id activity_chooser_view_content
 id add
