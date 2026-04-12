@@ -37,8 +37,11 @@ class NightWolvesFragment : Fragment() {
         val wolves = state.aliveWolves
         binding.tvWolvesToCall.text = "Chiama i lupi:\n${wolves.joinToString(", ") { it.name }}"
 
-        // Victims = alive players (wolves can pick anyone alive for dramatic effect, or restrict to non-wolves)
-        val targets = state.alivePlayers
+        // Victims = alive players non-wolves
+        val wolfIds = state.aliveWolves.map { it.id }
+        val targets = state.alivePlayers.filter { player ->
+            player.id !in wolfIds
+        }
         val adapter = PlayerSelectAdapter(targets) { player ->
             selectedTarget = player
         }
