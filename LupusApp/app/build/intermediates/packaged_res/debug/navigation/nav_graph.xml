@@ -65,6 +65,11 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
+            android:id="@+id/action_night_seer_to_vigilante"
+            app:destination="@id/vigilanteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
             android:id="@+id/action_night_seer_to_day"
             app:destination="@id/dayVoteFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -104,34 +109,17 @@
         android:label="Notte - Lupi"
         tools:layout="@layout/fragment_night_wolves">
         <action
-            android:id="@+id/action_night_wolves_to_kill_result"
-            app:destination="@id/killResultFragment"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"/>
-    </fragment>
-
-    <fragment
-        android:id="@+id/killResultFragment"
-        android:name="com.lupus.game.ui.night.KillResultFragment"
-        android:label="Vittima"
-        tools:layout="@layout/fragment_kill_result">
-        <action
-            android:id="@+id/action_kill_result_to_day"
+            android:id="@+id/action_night_wolves_to_day"
             app:destination="@id/dayVoteFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
-            android:id="@+id/action_kill_result_to_result"
+            android:id="@+id/action_night_wolves_to_result"
             app:destination="@id/gameResultFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"/>
         <action
-            android:id="@+id/action_kill_result_to_night_seer"
-            app:destination="@id/nightSeerFragment"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"/>
-        <action
-            android:id="@+id/action_kill_result_to_vigilante"
+            android:id="@+id/action_night_wolves_to_vigilante"
             app:destination="@id/vigilanteFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"/>

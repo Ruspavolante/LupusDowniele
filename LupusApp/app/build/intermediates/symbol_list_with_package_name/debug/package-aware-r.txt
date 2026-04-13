@@ -3220,10 +3220,6 @@ id action_day_to_result
 id action_day_to_vote_result
 id action_divider
 id action_image
-id action_kill_result_to_day
-id action_kill_result_to_night_seer
-id action_kill_result_to_result
-id action_kill_result_to_vigilante
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -3232,8 +3228,11 @@ id action_mode_close_button
 id action_names_to_roles
 id action_night_seer_to_day
 id action_night_seer_to_result
+id action_night_seer_to_vigilante
 id action_night_seer_to_wolves
-id action_night_wolves_to_kill_result
+id action_night_wolves_to_day
+id action_night_wolves_to_result
+id action_night_wolves_to_vigilante
 id action_result_to_setup
 id action_roles_to_seer
 id action_roles_to_wolves
@@ -3422,7 +3421,6 @@ id item_touch_helper_previous_elevation
 id iv_selected
 id jumpToEnd
 id jumpToStart
-id killResultFragment
 id labeled
 id layout
 id left

@@ -8,37 +8,6 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="VFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_night_seer_to_day">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_night_seer_to_result">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_night_seer_to_wolves">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="dayVoteFragment">
                     <value>
                       <LayoutPositions>
@@ -108,6 +77,11 @@
                               </value>
                             </entry>
                             <entry key="action_kill_result_to_result">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_kill_result_to_vigilante">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -201,7 +175,12 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_roles_to_game">
+                            <entry key="action_roles_to_seer">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_roles_to_wolves">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -232,6 +211,37 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="vigilanteFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_vigilante_to_day">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_vigilante_to_result">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_vigilante_to_wolves">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="voteResultFragment">
                     <value>
                       <LayoutPositions>
@@ -243,7 +253,12 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_vote_result_to_next_round">
+                            <entry key="action_vote_result_to_seer">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_vote_result_to_wolves">
                               <value>
                                 <LayoutPositions />
                               </value>

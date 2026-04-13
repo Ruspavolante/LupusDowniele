@@ -44,10 +44,6 @@
         "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_button_danger.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_vigilante.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_vigilante.xml"
-    },
-    {
         "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_item_player_select.xml.flat",
         "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\item_player_select.xml"
     },
@@ -106,6 +102,10 @@
     {
         "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\anim_slide_out_left.xml.flat",
         "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.lupus.game.app-main-51:/drawable/ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-xhdpi_ic_launcher_round.png.flat",

@@ -13,7 +13,7 @@ class GameViewModel : ViewModel() {
         repeat(wolfCount) { roles.add(Role.WOLF) }
         repeat(seerCount) { roles.add(Role.SEER) }
         repeat(vigilanteCount) { roles.add(Role.VIGILANTE) }
-        repeat(playerNames.size - wolfCount - seerCount) { roles.add(Role.VILLAGER) }
+        repeat(playerNames.size - wolfCount - seerCount - vigilanteCount) { roles.add(Role.VILLAGER) }
         roles.shuffle()
 
         val players = playerNames.mapIndexed { index, name ->
@@ -52,7 +52,7 @@ class GameViewModel : ViewModel() {
             }
             state.round++
             state.lastKilledByWolves = null
-            state.lastEliminatedByVote = null
+            //state.lastEliminatedByVote = null
             state.phase = state.buildPhaseQueue().first()
         }
     }
@@ -108,8 +108,9 @@ class GameViewModel : ViewModel() {
         val target = state.players.find { it.id == targetId } ?: return
         target.isAlive = false
         state.lastEliminatedByVote = target
-        advancePhase(state)
         gameState.value = state
+        advancePhase(state)
+
     }
 
     fun getPlayerById(id: Int): Player? =

@@ -30,7 +30,8 @@ class VoteResultFragment : Fragment() {
         val eliminated = state.lastEliminatedByVote
 
         if (eliminated != null) {
-            binding.tvVoteResult.text = "☀️ Il villaggio ha eliminato:\n\n${eliminated.name}\n\nEra: ${eliminated.role.displayName}"
+            binding.tvVoteResult.text = "☀️ Il villaggio ha eliminato:\n\n${eliminated.name}\n\n"
+            binding.tvVoteResult.visibility = View.VISIBLE
         }
 
         binding.btnNextRound.setOnClickListener {

@@ -4,16 +4,93 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
+
+    <!-- Sfondo bianco -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M54,20 C54,20 30,35 30,55 C30,68 40,78 54,78 C68,78 78,68 78,55 C78,35 54,20 54,20Z"/>
+        android:fillColor="#EFEFEF"
+        android:pathData="M0,0 H108 V108 H0 Z"/>
+
+    <!-- Cerchio nero pieno -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M38,62 Q34,58 36,52 L42,56 Z"/>
+        android:fillColor="#000000"
+        android:pathData="M54,54 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/>
+
+    <!-- Cerchio rosso -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M70,62 Q74,58 72,52 L66,56 Z"/>
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#CC2222"
+        android:strokeWidth="4"
+        android:pathData="M54,54 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/>
+
+    <!-- Contorno nero esterno -->
     <path
-        android:fillColor="#CC2222"
-        android:pathData="M46,50 C46,47 48,45 50,45 C52,45 54,47 54,50 C54,47 56,45 58,45 C60,45 62,47 62,50 C62,55 54,62 54,62 C54,62 46,55 46,50Z"/>
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:pathData="M54,54 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/>
+
+    <!-- TESTA LUPO (forma principale più fluida) -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="
+            M54,28
+            C48,28 42,34 38,42
+            L34,52
+            L40,50
+            L38,62
+            C40,72 47,80 54,84
+            C61,80 68,72 70,62
+            L68,50
+            L74,52
+            L70,42
+            C66,34 60,28 54,28 Z"/>
+
+    <!-- ORECCHIE (più definite) -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M38,42 L34,28 L46,38 Z"/>
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M70,42 L74,28 L62,38 Z"/>
+
+    <!-- INTERNO ORECCHIE -->
+    <path
+        android:fillColor="#9E9E9E"
+        android:pathData="M40,40 L37,32 L45,38 Z"/>
+    <path
+        android:fillColor="#9E9E9E"
+        android:pathData="M68,40 L71,32 L63,38 Z"/>
+
+    <!-- MUSO -->
+    <path
+        android:fillColor="#876464"
+        android:pathData="
+            M44,64
+            C48,72 60,72 64,64
+            C60,78 48,78 44,64 Z"/>
+
+    <!-- NASO -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="
+            M50,66
+            C52,68 56,68 58,66
+            C56,72 52,72 50,66 Z"/>
+
+    <!-- OCCHI (più “sharp”) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M44,54 L48,52 L48,56 Z"/>
+    <path
+        android:fillColor="#000000"
+        android:pathData="M64,54 L60,52 L60,56 Z"/>
+
+    <!-- SOPRACCIGLIA (espressione aggressiva) -->
+    <path
+        android:fillColor="#9E9E9E"
+        android:pathData="M42,50 L50,48 L48,50 Z"/>
+    <path
+        android:fillColor="#9E9E9E"
+        android:pathData="M66,50 L58,48 L60,50 Z"/>
+
 </vector>

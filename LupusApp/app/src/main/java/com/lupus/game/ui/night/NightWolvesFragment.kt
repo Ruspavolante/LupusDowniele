@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lupus.game.R
 import com.lupus.game.databinding.FragmentNightWolvesBinding
+import com.lupus.game.model.GamePhase
 import com.lupus.game.model.Player
 import com.lupus.game.ui.adapters.PlayerSelectAdapter
 import com.lupus.game.viewmodel.GameViewModel
@@ -55,12 +56,20 @@ class NightWolvesFragment : Fragment() {
                 return@setOnClickListener
             }
             viewModel.wolvesKill(target.id)
-            findNavController().navigate(R.id.action_night_wolves_to_kill_result)
+            val nextPhase = viewModel.gameState.value?.phase ?: GamePhase.DAY_VOTE
+            findNavController().navigate(navigationActionFor(nextPhase))
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun navigationActionFor(phase: GamePhase) = when (phase) {
+        GamePhase.DAY_VOTE     -> R.id.action_night_wolves_to_day
+        GamePhase.GAME_OVER    -> R.id.action_night_wolves_to_result
+        GamePhase.VIGILANTE    -> R.id.action_night_wolves_to_vigilante
+        else                   -> R.id.action_night_wolves_to_day
     }
 }

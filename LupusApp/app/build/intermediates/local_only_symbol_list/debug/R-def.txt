@@ -38,15 +38,14 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id action_day_to_result
 id action_day_to_vote_result
-id action_kill_result_to_day
-id action_kill_result_to_night_seer
-id action_kill_result_to_result
-id action_kill_result_to_vigilante
 id action_names_to_roles
 id action_night_seer_to_day
 id action_night_seer_to_result
+id action_night_seer_to_vigilante
 id action_night_seer_to_wolves
-id action_night_wolves_to_kill_result
+id action_night_wolves_to_day
+id action_night_wolves_to_result
+id action_night_wolves_to_vigilante
 id action_result_to_setup
 id action_roles_to_seer
 id action_roles_to_wolves
@@ -70,7 +69,6 @@ id dayVoteFragment
 id et_player_count
 id gameResultFragment
 id iv_selected
-id killResultFragment
 id ll_names
 id nav_graph
 id nav_host_fragment

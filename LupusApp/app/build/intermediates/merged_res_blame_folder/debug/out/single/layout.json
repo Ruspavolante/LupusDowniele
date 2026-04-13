@@ -1,58 +1,54 @@
 [
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_game.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_game.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_night_wolves.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_night_wolves.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_night_seer.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_night_seer.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_day_vote.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_day_vote.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_kill_result.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_kill_result.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_game.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_game.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_night_wolves.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_night_wolves.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_player_names.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_player_names.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\activity_main.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/activity_main.xml",
+        "source": "com.lupus.game.app-main-51:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_result.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_result.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_setup.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_setup.xml"
+    },
+    {
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/item_player_select.xml",
+        "source": "com.lupus.game.app-main-51:/layout/item_player_select.xml"
     },
     {
         "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_vigilante.xml",
         "source": "com.lupus.game.app-main-51:/layout/fragment_vigilante.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_setup.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_setup.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_result.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_result.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_roles_setup.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_roles_setup.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_kill_result.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_kill_result.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\item_player_select.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\item_player_select.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_roles_setup.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_roles_setup.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_vigilante.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_vigilante.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_vote_result.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_vote_result.xml"
     },
     {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_day_vote.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_day_vote.xml"
-    },
-    {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_vote_result.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_vote_result.xml"
-    },
-    {
-        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-mergeDebugResources-48:\\layout\\fragment_player_names.xml",
-        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_player_names.xml"
+        "merged": "com.lupus.game.app-mergeDebugResources-48:/layout/fragment_night_seer.xml",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_night_seer.xml"
     }
 ]
