@@ -10,7 +10,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.lupus.game.R
 import com.lupus.game.databinding.FragmentRolesSetupBinding
-import com.lupus.game.model.GamePhase
 import com.lupus.game.viewmodel.GameViewModel
 
 class RolesSetupFragment : Fragment() {
@@ -80,11 +79,7 @@ class RolesSetupFragment : Fragment() {
             }
 
             viewModel.startGame(names, wolves, seers, vigilanti)
-            when (viewModel.firstPhase()) {
-                GamePhase.NIGHT_SEER   -> findNavController().navigate(R.id.action_roles_to_seer)
-                GamePhase.NIGHT_WOLVES -> findNavController().navigate(R.id.action_roles_to_wolves)
-                else                   -> findNavController().navigate(R.id.action_roles_to_wolves)
-            }
+            findNavController().navigate(R.id.action_roles_to_reveal)
         }
     }
 

@@ -3080,6 +3080,10 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_role_seer
+drawable ic_role_vigilante
+drawable ic_role_villager
+drawable ic_role_wolf
 drawable ic_search_black_24
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3234,8 +3238,9 @@ id action_night_wolves_to_day
 id action_night_wolves_to_result
 id action_night_wolves_to_vigilante
 id action_result_to_setup
-id action_roles_to_seer
-id action_roles_to_wolves
+id action_reveal_to_seer
+id action_reveal_to_wolves
+id action_roles_to_reveal
 id action_setup_to_names
 id action_text
 id action_vigilante_to_day
@@ -3283,6 +3288,7 @@ id btn_next
 id btn_next_round
 id btn_reveal
 id btn_start_game
+id btn_toggle_info
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3418,11 +3424,16 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id iv_role_image
 id iv_selected
 id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_description
+id layout_master
+id layout_pass_phone
+id layout_role
 id left
 id leftToRight
 id legacy
@@ -3569,6 +3580,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id roleRevealFragment
 id rolesSetupFragment
 id rounded
 id row_index_key
@@ -3687,9 +3699,12 @@ id transition_transform
 id triangle
 id tv_alive_players
 id tv_day_round
+id tv_description
 id tv_kill_announcement
+id tv_pass_instruction
 id tv_player_name
 id tv_reveal_result
+id tv_role_name
 id tv_roles
 id tv_round
 id tv_round_info
@@ -3700,6 +3715,7 @@ id tv_villagers
 id tv_vote_result
 id tv_winner
 id tv_winner_desc
+id tv_wins_with
 id tv_wolves_to_call
 id unchecked
 id uniform
@@ -3865,6 +3881,7 @@ layout fragment_night_seer
 layout fragment_night_wolves
 layout fragment_player_names
 layout fragment_result
+layout fragment_role_reveal
 layout fragment_roles_setup
 layout fragment_setup
 layout fragment_vigilante

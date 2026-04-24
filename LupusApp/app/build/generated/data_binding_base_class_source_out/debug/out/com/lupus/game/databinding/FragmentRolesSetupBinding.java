@@ -5,8 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.NumberPicker;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class FragmentRolesSetupBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
   public final Button btnStartGame;
@@ -39,7 +39,7 @@ public final class FragmentRolesSetupBinding implements ViewBinding {
   @NonNull
   public final TextView tvVillagers;
 
-  private FragmentRolesSetupBinding(@NonNull LinearLayout rootView, @NonNull Button btnStartGame,
+  private FragmentRolesSetupBinding(@NonNull ScrollView rootView, @NonNull Button btnStartGame,
       @NonNull NumberPicker npSeers, @NonNull NumberPicker npVigilanti,
       @NonNull NumberPicker npWolves, @NonNull TextView tvTotalPlayers,
       @NonNull TextView tvVillagers) {
@@ -54,7 +54,7 @@ public final class FragmentRolesSetupBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -115,7 +115,7 @@ public final class FragmentRolesSetupBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentRolesSetupBinding((LinearLayout) rootView, btnStartGame, npSeers,
+      return new FragmentRolesSetupBinding((ScrollView) rootView, btnStartGame, npSeers,
           npVigilanti, npWolves, tvTotalPlayers, tvVillagers);
     }
     String missingId = rootView.getResources().getResourceName(id);

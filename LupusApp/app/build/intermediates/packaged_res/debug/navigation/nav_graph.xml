@@ -39,14 +39,28 @@
         android:label="Ruoli"
         tools:layout="@layout/fragment_roles_setup">
         <action
-            android:id="@+id/action_roles_to_seer"
+            android:id="@+id/action_roles_to_reveal"
+            app:destination="@id/roleRevealFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/setupFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/roleRevealFragment"
+        android:name="com.lupus.game.ui.setup.RoleRevealFragment"
+        android:label="Ruoli Segreti"
+        tools:layout="@layout/fragment_role_reveal">
+        <action
+            android:id="@+id/action_reveal_to_seer"
             app:destination="@id/nightSeerFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/setupFragment"
             app:popUpToInclusive="false"/>
         <action
-            android:id="@+id/action_roles_to_wolves"
+            android:id="@+id/action_reveal_to_wolves"
             app:destination="@id/nightWolvesFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"

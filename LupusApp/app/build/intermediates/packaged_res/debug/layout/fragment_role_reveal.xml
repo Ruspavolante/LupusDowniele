@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- Schermata 1: Passa il telefono al giocatore -->
+    <LinearLayout
+        android:id="@+id/layout_pass_phone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📱"
+            android:textSize="72sp"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:id="@+id/tv_pass_instruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.4"
+            android:layout_marginBottom="48dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tocca per continuare"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"/>
+
+    </LinearLayout>
+
+    <!-- Schermata 2: Rivelazione ruolo -->
+    <LinearLayout
+        android:id="@+id/layout_role"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Immagine ruolo: occupa la maggior parte dello schermo -->
+        <ImageView
+            android:id="@+id/iv_role_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"/>
+
+        <!-- Pannello info in basso -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_dark"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/tv_role_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btn_toggle_info"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="ℹ️ Mostra info ruolo"
+                android:textSize="14sp"
+                android:background="@drawable/bg_button_primary"
+                android:layout_marginBottom="12dp"
+                android:paddingHorizontal="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_dark"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_primary"
+                    android:lineSpacingMultiplier="1.4"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_wins_with"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="italic"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Avanti →"
+                android:textSize="17sp"
+                android:background="@drawable/bg_button_primary"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Schermata 3: Passa il telefono al master -->
+    <LinearLayout
+        android:id="@+id/layout_master"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎲"
+            android:textSize="72sp"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passa il telefono al master"
+            android:textSize="26sp"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:layout_marginBottom="48dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tocca per iniziare la partita"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"/>
+
+    </LinearLayout>
+
+</FrameLayout>

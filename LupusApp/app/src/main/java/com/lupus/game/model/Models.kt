@@ -3,11 +3,24 @@ package com.lupus.game.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
-enum class Role(val displayName: String, val isEvil: Boolean) {
-    WOLF("Lupo", true),
-    VILLAGER("Villico", false),
-    SEER("Veggente", false),
-    VIGILANTE("Giustiziere", false)
+enum class Role(
+    val displayName: String,
+    val isEvil: Boolean,
+    val description: String,
+    val winsWith: String
+) {
+    WOLF("Lupo", true,
+        "Una volta per notte scegli un bersaglio e lo mangi.",
+        "Vince con i lupi."),
+    VILLAGER("Villico", false,
+        "Non hai poteri speciali. Durante il giorno vota per eliminare un sospetto.",
+        "Vince con i buoni."),
+    SEER("Veggente", false,
+        "Una volta per notte puoi scoprire il ruolo di un giocatore a scelta.",
+        "Vince con i buoni."),
+    VIGILANTE("Giustiziere", false,
+        "Una volta nella partita puoi eliminare un giocatore durante la notte.",
+        "Vince con i buoni.")
 }
 
 // Ogni fase ha una priorità — ordine crescente = ordine di esecuzione nel round
