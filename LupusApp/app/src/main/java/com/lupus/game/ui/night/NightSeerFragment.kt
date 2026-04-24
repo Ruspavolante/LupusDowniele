@@ -52,6 +52,7 @@ class NightSeerFragment : BaseNightRoleFragment() {
     override fun onContinue() = viewModel.seerDone()
 
     override fun navigationActionFor(phase: GamePhase) = when (phase) {
+        GamePhase.NIGHT_KNIGHT  -> R.id.action_night_seer_to_knight
         GamePhase.NIGHT_WOLVES  -> R.id.action_night_seer_to_wolves
         GamePhase.NIGHT_WENDIGO -> R.id.action_night_seer_to_wendigo
         GamePhase.VIGILANTE     -> R.id.action_night_seer_to_vigilante

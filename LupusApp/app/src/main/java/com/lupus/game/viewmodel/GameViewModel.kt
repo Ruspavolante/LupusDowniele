@@ -13,13 +13,14 @@ class GameViewModel : ViewModel() {
 
     val gameState = MutableLiveData<GameState>()
 
-    fun startGame(playerNames: List<String>, wolfCount: Int, seerCount: Int, vigilanteCount: Int, wendigoCount: Int = 0) {
+    fun startGame(playerNames: List<String>, wolfCount: Int, seerCount: Int, vigilanteCount: Int, wendigoCount: Int = 0, knightCount: Int = 0) {
         val roles = mutableListOf<Role>()
         repeat(wolfCount) { roles.add(Role.WOLF) }
         repeat(seerCount) { roles.add(Role.SEER) }
         repeat(vigilanteCount) { roles.add(Role.VIGILANTE) }
         repeat(wendigoCount) { roles.add(Role.WENDIGO) }
-        repeat(playerNames.size - wolfCount - seerCount - vigilanteCount - wendigoCount) { roles.add(Role.VILLAGER) }
+        repeat(knightCount) { roles.add(Role.KNIGHT) }
+        repeat(playerNames.size - wolfCount - seerCount - vigilanteCount - wendigoCount - knightCount) { roles.add(Role.VILLAGER) }
         roles.shuffle()
 
         val players = playerNames.mapIndexed { index, name ->
@@ -34,16 +35,22 @@ class GameViewModel : ViewModel() {
 
     // Avanza alla prossima fase della coda, o termina il round
     private fun advancePhase(state: GameState) {
+        if (state.phase == GamePhase.GAME_OVER) return
         val next = state.nextPhase()
         if (next != null) {
             if (next == GamePhase.NIGHT_DEATHS) {
-                // Wolf kill: protect wendigo
+                // Wolf kill: blocked if target is Wendigo or knight-protected
                 val wolfTarget = state.wolfKillTargetId?.let { id -> state.players.find { it.id == id } }
-                if (wolfTarget != null && wolfTarget.role != Role.WENDIGO && wolfTarget.isAlive) {
-                    wolfTarget.isAlive = false
-                    state.deathLog.add(DeathRecord(wolfTarget.name, state.round, isNight = true))
+                if (wolfTarget != null && wolfTarget.isAlive) {
+                    val wendigoImmune = wolfTarget.role == Role.WENDIGO
+                    val knightProtected = wolfTarget.id == state.knightProtectId
+                    if (!wendigoImmune && !knightProtected) {
+                        wolfTarget.isAlive = false
+                        state.deathLog.add(DeathRecord(wolfTarget.name, state.round, isNight = true))
+                    }
                 }
                 state.wolfKillTargetId = null
+                state.knightProtectId = null
                 // Vigilante / wendigo kills
                 state.players.filter { it.killedInRound }.forEach { p ->
                     p.killedInRound = false
@@ -115,6 +122,18 @@ class GameViewModel : ViewModel() {
         gameState.value = state
     }
 
+    fun knightProtect(targetId: Int) {
+        val state = gameState.value ?: return
+        state.knightProtectId = targetId
+        gameState.value = state
+    }
+
+    fun knightDone() {
+        val state = gameState.value ?: return
+        advancePhase(state)
+        gameState.value = state
+    }
+
     fun wendigoAct(targetId: Int, guessedRole: Role) {
         val state = gameState.value ?: return
         val target = state.players.find { it.id == targetId }
@@ -139,8 +158,8 @@ class GameViewModel : ViewModel() {
         target.isAlive = false
         state.deathLog.add(DeathRecord(target.name, state.round, isNight = false))
         state.lastEliminatedByVote = target
-        gameState.value = state
         advancePhase(state)
+        gameState.value = state
     }
 
     fun nightDeathsDone() {

@@ -36,7 +36,8 @@ private val binding get() = _binding!!
             val seers = binding.npSeers.value
             val vigilanti = binding.npVigilanti.value
             val wendigo = binding.npWendigo.value
-            val villagers = total - wolves - seers - vigilanti - wendigo
+            val knight = binding.npKnight.value
+            val villagers = total - wolves - seers - vigilanti - wendigo - knight
             binding.tvVillagers.text = "Villici: ${if (villagers >= 0) villagers else "⚠️"}"
         }
 
@@ -68,6 +69,13 @@ private val binding get() = _binding!!
             setOnValueChangedListener { _, _, _ -> updateVillagers() }
         }
 
+        binding.npKnight.apply {
+            minValue = 0
+            maxValue = 1
+            value = 0
+            setOnValueChangedListener { _, _, _ -> updateVillagers() }
+        }
+
         updateVillagers()
 
         binding.btnStartGame.setOnClickListener {
@@ -75,18 +83,19 @@ private val binding get() = _binding!!
             val seers = binding.npSeers.value
             val vigilanti = binding.npVigilanti.value
             val wendigo = binding.npWendigo.value
-            val villagers = total - wolves - seers - vigilanti - wendigo
+            val knight = binding.npKnight.value
+            val villagers = total - wolves - seers - vigilanti - wendigo - knight
 
             if (villagers < 0) {
                 Toast.makeText(requireContext(), "Troppi ruoli speciali!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (villagers == 0 && seers == 0 && vigilanti == 0 && wendigo == 0) {
+            if (villagers == 0 && seers == 0 && vigilanti == 0 && wendigo == 0 && knight == 0) {
                 Toast.makeText(requireContext(), "Ci deve essere almeno un non-lupo", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            viewModel.startGame(names, wolves, seers, vigilanti, wendigo)
+            viewModel.startGame(names, wolves, seers, vigilanti, wendigo, knight)
             findNavController().navigate(R.id.action_roles_to_reveal)
         }
     }

@@ -25,6 +25,9 @@ public final class FragmentRolesSetupBinding implements ViewBinding {
   public final Button btnStartGame;
 
   @NonNull
+  public final NumberPicker npKnight;
+
+  @NonNull
   public final NumberPicker npSeers;
 
   @NonNull
@@ -43,11 +46,13 @@ public final class FragmentRolesSetupBinding implements ViewBinding {
   public final TextView tvVillagers;
 
   private FragmentRolesSetupBinding(@NonNull ScrollView rootView, @NonNull Button btnStartGame,
-      @NonNull NumberPicker npSeers, @NonNull NumberPicker npVigilanti,
-      @NonNull NumberPicker npWendigo, @NonNull NumberPicker npWolves,
-      @NonNull TextView tvTotalPlayers, @NonNull TextView tvVillagers) {
+      @NonNull NumberPicker npKnight, @NonNull NumberPicker npSeers,
+      @NonNull NumberPicker npVigilanti, @NonNull NumberPicker npWendigo,
+      @NonNull NumberPicker npWolves, @NonNull TextView tvTotalPlayers,
+      @NonNull TextView tvVillagers) {
     this.rootView = rootView;
     this.btnStartGame = btnStartGame;
+    this.npKnight = npKnight;
     this.npSeers = npSeers;
     this.npVigilanti = npVigilanti;
     this.npWendigo = npWendigo;
@@ -89,6 +94,12 @@ public final class FragmentRolesSetupBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.np_knight;
+      NumberPicker npKnight = ViewBindings.findChildViewById(rootView, id);
+      if (npKnight == null) {
+        break missingId;
+      }
+
       id = R.id.np_seers;
       NumberPicker npSeers = ViewBindings.findChildViewById(rootView, id);
       if (npSeers == null) {
@@ -125,7 +136,7 @@ public final class FragmentRolesSetupBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentRolesSetupBinding((ScrollView) rootView, btnStartGame, npSeers,
+      return new FragmentRolesSetupBinding((ScrollView) rootView, btnStartGame, npKnight, npSeers,
           npVigilanti, npWendigo, npWolves, tvTotalPlayers, tvVillagers);
     }
     String missingId = rootView.getResources().getResourceName(id);

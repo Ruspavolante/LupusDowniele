@@ -23,13 +23,17 @@ enum class Role(
         "Vince con i buoni."),
     WENDIGO("Wendigo", false,
         "Ogni notte scegli un giocatore e indovina il suo ruolo. Se indovini, quel giocatore muore. I lupi non possono ucciderti di notte.",
-        "Vince da solo. Deve restare in gioco con un solo altro giocatore.")
+        "Vince da solo. Deve restare in gioco con un solo altro giocatore."),
+    KNIGHT("Cavaliere", false,
+        "Ogni notte puoi proteggere un altro giocatore dall'attacco dei lupi. Non puoi proteggere te stesso. Giustiziere e Wendigo ignorano la tua protezione.",
+        "Vince con i buoni.")
 }
 
 // Ogni fase ha una priorità — ordine crescente = ordine di esecuzione nel round
 enum class GamePhase(val priority: Int) {
     SETUP(0),
     NIGHT_SEER(10),
+    NIGHT_KNIGHT(15),
     NIGHT_WOLVES(20),
     NIGHT_WENDIGO(22),
     VIGILANTE(25),
@@ -42,6 +46,7 @@ enum class GamePhase(val priority: Int) {
 // null = fase sempre presente
 val PHASE_ROLE_REQUIREMENT: Map<GamePhase, Role?> = mapOf(
     GamePhase.NIGHT_SEER to Role.SEER,
+    GamePhase.NIGHT_KNIGHT to Role.KNIGHT,
     GamePhase.NIGHT_WOLVES to Role.WOLF,
     GamePhase.NIGHT_WENDIGO to Role.WENDIGO,
     GamePhase.VIGILANTE to Role.VIGILANTE,
@@ -77,7 +82,8 @@ data class GameState(
     var lastEliminatedByVote: Player? = null,
     var winner: Winner = Winner.NONE,
     val deathLog: MutableList<DeathRecord> = mutableListOf(),
-    var wolfKillTargetId: Int? = null
+    var wolfKillTargetId: Int? = null,
+    var knightProtectId: Int? = null
 ) {
     val alivePlayers get() = players.filter { it.isAlive }
     val aliveWolves get() = players.filter { it.isAlive && it.role == Role.WOLF }

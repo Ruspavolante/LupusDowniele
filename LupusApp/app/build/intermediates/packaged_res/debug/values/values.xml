@@ -11,6 +11,7 @@
     <color name="header_night">#16213E</color>
     <color name="item_bg">#1E2140</color>
     <color name="item_selected_bg">#3D4480</color>
+    <color name="knight_gold">#D4AF37</color>
     <color name="primary">#5C6BC0</color>
     <color name="primary_dark">#3949AB</color>
     <color name="seer_purple">#CE93D8</color>

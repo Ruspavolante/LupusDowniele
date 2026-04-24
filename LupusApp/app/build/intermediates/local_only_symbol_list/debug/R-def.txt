@@ -15,6 +15,7 @@ color header_day
 color header_night
 color item_bg
 color item_selected_bg
+color knight_gold
 color primary
 color primary_dark
 color seer_purple
@@ -37,6 +38,7 @@ drawable bg_player_item
 drawable ic_check_circle
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_role_knight
 drawable ic_role_seer
 drawable ic_role_vigilante
 drawable ic_role_villager
@@ -44,10 +46,17 @@ drawable ic_role_wendigo
 drawable ic_role_wolf
 id action_day_to_result
 id action_day_to_vote_result
+id action_knight_to_day
+id action_knight_to_night_deaths
+id action_knight_to_result
+id action_knight_to_vigilante
+id action_knight_to_wendigo
+id action_knight_to_wolves
 id action_names_to_roles
 id action_night_deaths_to_day
 id action_night_deaths_to_result
 id action_night_seer_to_day
+id action_night_seer_to_knight
 id action_night_seer_to_night_deaths
 id action_night_seer_to_result
 id action_night_seer_to_vigilante
@@ -59,6 +68,7 @@ id action_night_wolves_to_result
 id action_night_wolves_to_vigilante
 id action_night_wolves_to_wendigo
 id action_result_to_setup
+id action_reveal_to_knight
 id action_reveal_to_seer
 id action_reveal_to_wendigo
 id action_reveal_to_wolves
@@ -68,6 +78,7 @@ id action_vigilante_to_day
 id action_vigilante_to_night_deaths
 id action_vigilante_to_result
 id action_vigilante_to_wolves
+id action_vote_result_to_knight
 id action_vote_result_to_seer
 id action_vote_result_to_wendigo
 id action_vote_result_to_wolves
@@ -97,6 +108,7 @@ id et_player_count
 id gameResultFragment
 id iv_role_image
 id iv_selected
+id knightFragment
 id layout_action
 id layout_description
 id layout_master
@@ -109,6 +121,7 @@ id nav_host_fragment
 id nightDeathsFragment
 id nightSeerFragment
 id nightWolvesFragment
+id np_knight
 id np_seers
 id np_vigilanti
 id np_wendigo
@@ -124,6 +137,7 @@ id tv_alive_players
 id tv_day_round
 id tv_description
 id tv_kill_announcement
+id tv_knight_name
 id tv_night_round
 id tv_no_deaths
 id tv_pass_instruction
@@ -150,6 +164,7 @@ layout activity_main
 layout fragment_day_vote
 layout fragment_game
 layout fragment_kill_result
+layout fragment_knight
 layout fragment_night_deaths
 layout fragment_night_seer
 layout fragment_night_wolves

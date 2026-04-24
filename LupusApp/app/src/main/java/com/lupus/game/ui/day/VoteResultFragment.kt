@@ -37,6 +37,7 @@ class VoteResultFragment : Fragment() {
         binding.btnNextRound.setOnClickListener {
             when (viewModel.firstPhase()) {
                 GamePhase.NIGHT_SEER    -> findNavController().navigate(R.id.action_vote_result_to_seer)
+                GamePhase.NIGHT_KNIGHT  -> findNavController().navigate(R.id.action_vote_result_to_knight)
                 GamePhase.NIGHT_WENDIGO -> findNavController().navigate(R.id.action_vote_result_to_wendigo)
                 else                    -> findNavController().navigate(R.id.action_vote_result_to_wolves)
             }
