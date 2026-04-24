@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_night">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:background="@color/bg_night">
+        <Button
+            android:id="@+id/btn_master"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="👑 Master"
+            android:textSize="12sp"
+            android:background="@drawable/bg_card_dark"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/text_secondary"/>
+    </LinearLayout>
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:background="@color/header_night">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛡️"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:id="@+id/tv_knight_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/knight_gold"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_card_dark"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Il cavaliere sceglie chi proteggere:"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:padding="20dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_targets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="false"/>
+
+    <Button
+        android:id="@+id/btn_reveal"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="🛡️ Proteggi"
+        android:textSize="16sp"
+        android:background="@drawable/bg_button_primary"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_reveal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/card_bg"
+        app:cardCornerRadius="12dp">
+
+        <TextView
+            android:id="@+id/tv_reveal_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="20dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_continue_to_day"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Continua"
+        android:textSize="18sp"
+        android:background="@drawable/bg_button_primary"
+        android:layout_margin="16dp"/>
+
+</LinearLayout>

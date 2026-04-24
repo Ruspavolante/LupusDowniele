@@ -1476,6 +1476,7 @@ color highlighted_text_material_dark
 color highlighted_text_material_light
 color item_bg
 color item_selected_bg
+color knight_gold
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3081,6 +3082,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_role_knight
 drawable ic_role_seer
 drawable ic_role_vigilante
 drawable ic_role_villager
@@ -3226,6 +3228,12 @@ id action_day_to_result
 id action_day_to_vote_result
 id action_divider
 id action_image
+id action_knight_to_day
+id action_knight_to_night_deaths
+id action_knight_to_result
+id action_knight_to_vigilante
+id action_knight_to_wendigo
+id action_knight_to_wolves
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -3235,6 +3243,7 @@ id action_names_to_roles
 id action_night_deaths_to_day
 id action_night_deaths_to_result
 id action_night_seer_to_day
+id action_night_seer_to_knight
 id action_night_seer_to_night_deaths
 id action_night_seer_to_result
 id action_night_seer_to_vigilante
@@ -3246,6 +3255,7 @@ id action_night_wolves_to_result
 id action_night_wolves_to_vigilante
 id action_night_wolves_to_wendigo
 id action_result_to_setup
+id action_reveal_to_knight
 id action_reveal_to_seer
 id action_reveal_to_wendigo
 id action_reveal_to_wolves
@@ -3256,6 +3266,7 @@ id action_vigilante_to_day
 id action_vigilante_to_night_deaths
 id action_vigilante_to_result
 id action_vigilante_to_wolves
+id action_vote_result_to_knight
 id action_vote_result_to_seer
 id action_vote_result_to_wendigo
 id action_vote_result_to_wolves
@@ -3449,6 +3460,7 @@ id iv_role_image
 id iv_selected
 id jumpToEnd
 id jumpToStart
+id knightFragment
 id labeled
 id layout
 id layout_action
@@ -3553,6 +3565,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id np_knight
 id np_seers
 id np_vigilanti
 id np_wendigo
@@ -3727,6 +3740,7 @@ id tv_alive_players
 id tv_day_round
 id tv_description
 id tv_kill_announcement
+id tv_knight_name
 id tv_night_round
 id tv_no_deaths
 id tv_pass_instruction
@@ -3907,6 +3921,7 @@ layout design_text_input_start_icon
 layout fragment_day_vote
 layout fragment_game
 layout fragment_kill_result
+layout fragment_knight
 layout fragment_night_deaths
 layout fragment_night_seer
 layout fragment_night_wolves

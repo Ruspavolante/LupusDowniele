@@ -73,6 +73,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/setupFragment"
             app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_reveal_to_knight"
+            app:destination="@id/knightFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/setupFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
 
     <fragment
@@ -88,6 +95,11 @@
         <action
             android:id="@+id/action_night_seer_to_vigilante"
             app:destination="@id/vigilanteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_night_seer_to_knight"
+            app:destination="@id/knightFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
@@ -231,6 +243,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/wendigoFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_vote_result_to_knight"
+            app:destination="@id/knightFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/knightFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -245,6 +264,43 @@
             app:exitAnim="@anim/fade_out"
             app:popUpTo="@id/setupFragment"
             app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/knightFragment"
+        android:name="com.lupus.game.ui.night.KnightFragment"
+        android:label="Notte - Cavaliere"
+        tools:layout="@layout/fragment_knight">
+        <action
+            android:id="@+id/action_knight_to_wolves"
+            app:destination="@id/nightWolvesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_knight_to_wendigo"
+            app:destination="@id/wendigoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_knight_to_vigilante"
+            app:destination="@id/vigilanteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_knight_to_night_deaths"
+            app:destination="@id/nightDeathsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_knight_to_day"
+            app:destination="@id/dayVoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_knight_to_result"
+            app:destination="@id/gameResultFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
     </fragment>
 
     <fragment
