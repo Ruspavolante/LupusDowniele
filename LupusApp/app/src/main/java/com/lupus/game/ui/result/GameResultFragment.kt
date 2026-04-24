@@ -40,6 +40,11 @@ class GameResultFragment : Fragment() {
                 binding.tvWinnerDesc.text = "I lupi hanno preso il controllo del villaggio!"
                 binding.tvWinner.setTextColor(resources.getColor(R.color.wolf_red, null))
             }
+            Winner.WENDIGO -> {
+                binding.tvWinner.text = "🌑 IL WENDIGO VINCE!"
+                binding.tvWinnerDesc.text = "Il wendigo ha seminato il terrore e vinto da solo!"
+                binding.tvWinner.setTextColor(resources.getColor(R.color.wendigo_color, null))
+            }
             else -> {}
         }
 

@@ -38,8 +38,9 @@ class NightSeerFragment : BaseNightRoleFragment() {
             headerDeadOrSpent = com.lupus.game.constants.SEER_DEAD,
             actionButtonText = com.lupus.game.constants.SEER_ACTION,
             confirmText = { target ->
-                if (target.role == Role.WOLF) "${target.name} "+com.lupus.game.constants.SEER_CONFIRM_BAD
-                else "✅ ${target.name} "+com.lupus.game.constants.SEER_CONFIRM_GOOD
+                if (target.role == Role.WOLF || target.role == Role.WENDIGO)
+                    "${target.name} " + com.lupus.game.constants.SEER_CONFIRM_BAD
+                else "✅ ${target.name} " + com.lupus.game.constants.SEER_CONFIRM_GOOD
             }
         )
     }
@@ -51,12 +52,13 @@ class NightSeerFragment : BaseNightRoleFragment() {
     override fun onContinue() = viewModel.seerDone()
 
     override fun navigationActionFor(phase: GamePhase) = when (phase) {
-        GamePhase.NIGHT_WOLVES -> R.id.action_night_seer_to_wolves
-        GamePhase.VIGILANTE    -> R.id.action_night_seer_to_vigilante
-        GamePhase.NIGHT_DEATHS -> R.id.action_night_seer_to_night_deaths
-        GamePhase.DAY_VOTE     -> R.id.action_night_seer_to_day
-        GamePhase.GAME_OVER    -> R.id.action_night_seer_to_result
-        else                   -> R.id.action_night_seer_to_night_deaths
+        GamePhase.NIGHT_WOLVES  -> R.id.action_night_seer_to_wolves
+        GamePhase.NIGHT_WENDIGO -> R.id.action_night_seer_to_wendigo
+        GamePhase.VIGILANTE     -> R.id.action_night_seer_to_vigilante
+        GamePhase.NIGHT_DEATHS  -> R.id.action_night_seer_to_night_deaths
+        GamePhase.DAY_VOTE      -> R.id.action_night_seer_to_day
+        GamePhase.GAME_OVER     -> R.id.action_night_seer_to_result
+        else                    -> R.id.action_night_seer_to_night_deaths
     }
 
     override fun onDestroyView() {

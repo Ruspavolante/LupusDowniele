@@ -20,7 +20,10 @@ enum class Role(
         "Vince con i buoni."),
     VIGILANTE("Giustiziere", false,
         "Una volta nella partita puoi eliminare un giocatore durante la notte.",
-        "Vince con i buoni.")
+        "Vince con i buoni."),
+    WENDIGO("Wendigo", false,
+        "Ogni notte scegli un giocatore e indovina il suo ruolo. Se indovini, quel giocatore muore. I lupi non possono ucciderti di notte.",
+        "Vince da solo. Deve restare in gioco con un solo altro giocatore.")
 }
 
 // Ogni fase ha una priorità — ordine crescente = ordine di esecuzione nel round
@@ -28,6 +31,7 @@ enum class GamePhase(val priority: Int) {
     SETUP(0),
     NIGHT_SEER(10),
     NIGHT_WOLVES(20),
+    NIGHT_WENDIGO(22),
     VIGILANTE(25),
     NIGHT_DEATHS(29),
     DAY_VOTE(30),
@@ -38,8 +42,9 @@ enum class GamePhase(val priority: Int) {
 // null = fase sempre presente
 val PHASE_ROLE_REQUIREMENT: Map<GamePhase, Role?> = mapOf(
     GamePhase.NIGHT_SEER to Role.SEER,
-    GamePhase.VIGILANTE to Role.VIGILANTE,
     GamePhase.NIGHT_WOLVES to Role.WOLF,
+    GamePhase.NIGHT_WENDIGO to Role.WENDIGO,
+    GamePhase.VIGILANTE to Role.VIGILANTE,
     GamePhase.NIGHT_DEATHS to null,
     GamePhase.DAY_VOTE to null
 )
@@ -51,7 +56,7 @@ data class DeathRecord(
 )
 
 enum class Winner {
-    GOOD, EVIL, NONE
+    GOOD, EVIL, WENDIGO, NONE
 }
 
 @Parcelize
@@ -71,11 +76,13 @@ data class GameState(
     var lastKilledByWolves: Player? = null,
     var lastEliminatedByVote: Player? = null,
     var winner: Winner = Winner.NONE,
-    val deathLog: MutableList<DeathRecord> = mutableListOf()
+    val deathLog: MutableList<DeathRecord> = mutableListOf(),
+    var wolfKillTargetId: Int? = null
 ) {
     val alivePlayers get() = players.filter { it.isAlive }
     val aliveWolves get() = players.filter { it.isAlive && it.role == Role.WOLF }
-    val aliveGood get() = players.filter { it.isAlive && !it.role.isEvil }
+    val aliveWendigo get() = players.filter { it.isAlive && it.role == Role.WENDIGO }
+    val aliveGood get() = players.filter { it.isAlive && !it.role.isEvil && it.role != Role.WENDIGO }
 
     // Costruisce la lista ordinata delle fasi attive per questo round
     // basandosi sui ruoli ancora vivi
@@ -100,10 +107,11 @@ data class GameState(
     fun checkWinner(): Winner {
         val wolves = aliveWolves.size
         val good = aliveGood.size
-        return when {
-            wolves == 0 -> Winner.GOOD
-            wolves >= good -> Winner.EVIL
-            else -> Winner.NONE
-        }
+        val wendigo = aliveWendigo.size
+        val total = alivePlayers.size
+        if (wendigo == 1 && total == 2) return Winner.WENDIGO
+        if (wolves == 0 && wendigo == 0) return Winner.GOOD
+        if (wolves >= good + wendigo) return Winner.EVIL
+        return Winner.NONE
     }
 }

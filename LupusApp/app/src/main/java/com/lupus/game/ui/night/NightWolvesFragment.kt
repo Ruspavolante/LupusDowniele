@@ -14,6 +14,7 @@ import com.lupus.game.databinding.FragmentNightWolvesBinding
 import com.lupus.game.model.GamePhase
 import com.lupus.game.model.Player
 import com.lupus.game.ui.adapters.PlayerSelectAdapter
+import com.lupus.game.ui.util.showMasterRolesDialog
 import com.lupus.game.viewmodel.GameViewModel
 
 class NightWolvesFragment : Fragment() {
@@ -32,6 +33,11 @@ class NightWolvesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val state = viewModel.gameState.value ?: return
+
+        binding.btnMaster.setOnClickListener {
+            showMasterRolesDialog(requireContext(), state.players)
+        }
+
         binding.tvRound.text = "Round ${state.round} — Notte"
 
         // Show wolves to call
@@ -67,10 +73,11 @@ class NightWolvesFragment : Fragment() {
     }
 
     fun navigationActionFor(phase: GamePhase) = when (phase) {
-        GamePhase.NIGHT_DEATHS -> R.id.action_night_wolves_to_night_deaths
-        GamePhase.DAY_VOTE     -> R.id.action_night_wolves_to_day
-        GamePhase.GAME_OVER    -> R.id.action_night_wolves_to_result
-        GamePhase.VIGILANTE    -> R.id.action_night_wolves_to_vigilante
-        else                   -> R.id.action_night_wolves_to_night_deaths
+        GamePhase.NIGHT_WENDIGO -> R.id.action_night_wolves_to_wendigo
+        GamePhase.NIGHT_DEATHS  -> R.id.action_night_wolves_to_night_deaths
+        GamePhase.DAY_VOTE      -> R.id.action_night_wolves_to_day
+        GamePhase.GAME_OVER     -> R.id.action_night_wolves_to_result
+        GamePhase.VIGILANTE     -> R.id.action_night_wolves_to_vigilante
+        else                    -> R.id.action_night_wolves_to_night_deaths
     }
 }

@@ -62,8 +62,9 @@ class RoleRevealFragment : Fragment() {
 
         binding.layoutMaster.setOnClickListener {
             val action = when (viewModel.firstPhase()) {
-                GamePhase.NIGHT_SEER -> R.id.action_reveal_to_seer
-                else                 -> R.id.action_reveal_to_wolves
+                GamePhase.NIGHT_SEER    -> R.id.action_reveal_to_seer
+                GamePhase.NIGHT_WENDIGO -> R.id.action_reveal_to_wendigo
+                else                    -> R.id.action_reveal_to_wolves
             }
             findNavController().navigate(action)
         }
@@ -114,6 +115,7 @@ class RoleRevealFragment : Fragment() {
         Role.VILLAGER  -> R.drawable.ic_role_villager
         Role.SEER      -> R.drawable.ic_role_seer
         Role.VIGILANTE -> R.drawable.ic_role_vigilante
+        Role.WENDIGO   -> R.drawable.ic_role_wendigo
     }
 
     private fun colorForRole(role: Role) = when (role) {
@@ -121,6 +123,7 @@ class RoleRevealFragment : Fragment() {
         Role.VILLAGER  -> R.color.villager_blue
         Role.SEER      -> R.color.seer_purple
         Role.VIGILANTE -> R.color.vigilante_red
+        Role.WENDIGO   -> R.color.wendigo_color
     }
 
     override fun onDestroyView() {

@@ -15,7 +15,7 @@ import com.lupus.game.viewmodel.GameViewModel
 class RolesSetupFragment : Fragment() {
 
     private var _binding: FragmentRolesSetupBinding? = null
-    private val binding get() = _binding!!
+private val binding get() = _binding!!
     private val viewModel: GameViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -35,7 +35,8 @@ class RolesSetupFragment : Fragment() {
             val wolves = binding.npWolves.value
             val seers = binding.npSeers.value
             val vigilanti = binding.npVigilanti.value
-            val villagers = total - wolves - seers - vigilanti
+            val wendigo = binding.npWendigo.value
+            val villagers = total - wolves - seers - vigilanti - wendigo
             binding.tvVillagers.text = "Villici: ${if (villagers >= 0) villagers else "⚠️"}"
         }
 
@@ -55,11 +56,17 @@ class RolesSetupFragment : Fragment() {
 
         binding.npVigilanti.apply {
             minValue = 0
-            maxValue =  1
+            maxValue = 1
             value = if (total >= 5) 1 else 0
             setOnValueChangedListener { _, _, _ -> updateVillagers() }
         }
 
+        binding.npWendigo.apply {
+            minValue = 0
+            maxValue = 1
+            value = 0
+            setOnValueChangedListener { _, _, _ -> updateVillagers() }
+        }
 
         updateVillagers()
 
@@ -67,18 +74,19 @@ class RolesSetupFragment : Fragment() {
             val wolves = binding.npWolves.value
             val seers = binding.npSeers.value
             val vigilanti = binding.npVigilanti.value
-            val villagers = total - wolves - seers - vigilanti
+            val wendigo = binding.npWendigo.value
+            val villagers = total - wolves - seers - vigilanti - wendigo
 
             if (villagers < 0) {
                 Toast.makeText(requireContext(), "Troppi ruoli speciali!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (villagers == 0 && seers == 0 && vigilanti == 0) {
+            if (villagers == 0 && seers == 0 && vigilanti == 0 && wendigo == 0) {
                 Toast.makeText(requireContext(), "Ci deve essere almeno un non-lupo", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            viewModel.startGame(names, wolves, seers, vigilanti)
+            viewModel.startGame(names, wolves, seers, vigilanti, wendigo)
             findNavController().navigate(R.id.action_roles_to_reveal)
         }
     }

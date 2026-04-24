@@ -2161,6 +2161,7 @@ color tooltip_background_dark
 color tooltip_background_light
 color vigilante_red
 color villager_blue
+color wendigo_color
 color wolf_red
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -3083,6 +3084,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_role_seer
 drawable ic_role_vigilante
 drawable ic_role_villager
+drawable ic_role_wendigo
 drawable ic_role_wolf
 drawable ic_search_black_24
 drawable m3_avd_hide_password
@@ -3236,13 +3238,16 @@ id action_night_seer_to_day
 id action_night_seer_to_night_deaths
 id action_night_seer_to_result
 id action_night_seer_to_vigilante
+id action_night_seer_to_wendigo
 id action_night_seer_to_wolves
 id action_night_wolves_to_day
 id action_night_wolves_to_night_deaths
 id action_night_wolves_to_result
 id action_night_wolves_to_vigilante
+id action_night_wolves_to_wendigo
 id action_result_to_setup
 id action_reveal_to_seer
+id action_reveal_to_wendigo
 id action_reveal_to_wolves
 id action_roles_to_reveal
 id action_setup_to_names
@@ -3252,7 +3257,11 @@ id action_vigilante_to_night_deaths
 id action_vigilante_to_result
 id action_vigilante_to_wolves
 id action_vote_result_to_seer
+id action_vote_result_to_wendigo
 id action_vote_result_to_wolves
+id action_wendigo_to_night_deaths
+id action_wendigo_to_result
+id action_wendigo_to_vigilante
 id actions
 id activity_chooser_view_content
 id add
@@ -3287,6 +3296,7 @@ id bounceStart
 id btn_confirm_kill
 id btn_continue
 id btn_continue_day
+id btn_continue_dead
 id btn_continue_to_day
 id btn_death_log
 id btn_eliminate
@@ -3297,6 +3307,8 @@ id btn_next_round
 id btn_reveal
 id btn_start_game
 id btn_toggle_info
+id btn_wendigo_act
+id btn_wendigo_skip
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3439,6 +3451,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_action
 id layout_description
 id layout_master
 id layout_pass_phone
@@ -3542,6 +3555,7 @@ id notification_main_column
 id notification_main_column_container
 id np_seers
 id np_vigilanti
+id np_wendigo
 id np_wolves
 id off
 id on
@@ -3587,6 +3601,7 @@ id ratio
 id rectangles
 id report_drawn
 id reverseSawtooth
+id rg_roles
 id right
 id rightToLeft
 id right_icon
@@ -3726,6 +3741,7 @@ id tv_total_players
 id tv_vigilante_name
 id tv_villagers
 id tv_vote_result
+id tv_wendigo_header
 id tv_winner
 id tv_winner_desc
 id tv_wins_with
@@ -3746,6 +3762,7 @@ id vigilanteFragment
 id visible
 id visible_removing_fragment_view_tag
 id voteResultFragment
+id wendigoFragment
 id west
 id withText
 id with_icon
@@ -3900,6 +3917,7 @@ layout fragment_roles_setup
 layout fragment_setup
 layout fragment_vigilante
 layout fragment_vote_result
+layout fragment_wendigo
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_player_select
