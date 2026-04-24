@@ -1,0 +1,4 @@
+#Sat Apr 25 00:58:50 CEST 2026
+base.0=C\:\\Users\\d.amati\\Documents\\GitHub\\LupusDowniele\\LupusDowniele\\LupusApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=0/classes.dex
+renamed.0=classes.dex
