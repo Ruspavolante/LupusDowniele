@@ -53,9 +53,10 @@ class VigilanteFragment : BaseNightRoleFragment() {
     override fun onContinue() = viewModel.vigilanteDone()
 
     override fun navigationActionFor(phase: GamePhase) = when (phase) {
-        GamePhase.DAY_VOTE  -> R.id.action_vigilante_to_day
-        GamePhase.GAME_OVER -> R.id.action_vigilante_to_result
-        else                -> R.id.action_vigilante_to_day
+        GamePhase.NIGHT_DEATHS -> R.id.action_vigilante_to_night_deaths
+        GamePhase.DAY_VOTE     -> R.id.action_vigilante_to_day
+        GamePhase.GAME_OVER    -> R.id.action_vigilante_to_result
+        else                   -> R.id.action_vigilante_to_night_deaths
     }
 
     override fun onDestroyView() {

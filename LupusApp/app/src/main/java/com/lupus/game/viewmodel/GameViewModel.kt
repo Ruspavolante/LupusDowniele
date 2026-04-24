@@ -2,7 +2,12 @@ package com.lupus.game.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.lupus.game.model.*
+import com.lupus.game.model.DeathRecord
+import com.lupus.game.model.GamePhase
+import com.lupus.game.model.GameState
+import com.lupus.game.model.Player
+import com.lupus.game.model.Role
+import com.lupus.game.model.Winner
 
 class GameViewModel : ViewModel() {
 
@@ -28,13 +33,14 @@ class GameViewModel : ViewModel() {
 
     // Avanza alla prossima fase della coda, o termina il round
     private fun advancePhase(state: GameState) {
-
         val next = state.nextPhase()
         if (next != null) {
-            state.phase = next
-            if (next.name.equals("DAY_VOTE"))
-            {
-                confirmKills()
+            if (next == GamePhase.NIGHT_DEATHS) {
+                state.players.filter { it.killedInRound }.forEach { p ->
+                    p.isAlive = false
+                    p.killedInRound = false
+                    state.deathLog.add(DeathRecord(p.name, state.round, isNight = true))
+                }
                 val winner = state.checkWinner()
                 if (winner != Winner.NONE) {
                     state.winner = winner
@@ -42,6 +48,7 @@ class GameViewModel : ViewModel() {
                     return
                 }
             }
+            state.phase = next
         } else {
             // Fine round: ricomincia dal primo della nuova coda
             val winner = state.checkWinner()
@@ -52,7 +59,6 @@ class GameViewModel : ViewModel() {
             }
             state.round++
             state.lastKilledByWolves = null
-            //state.lastEliminatedByVote = null
             state.phase = state.buildPhaseQueue().first()
         }
     }
@@ -107,10 +113,16 @@ class GameViewModel : ViewModel() {
         val state = gameState.value ?: return
         val target = state.players.find { it.id == targetId } ?: return
         target.isAlive = false
+        state.deathLog.add(DeathRecord(target.name, state.round, isNight = false))
         state.lastEliminatedByVote = target
         gameState.value = state
         advancePhase(state)
+    }
 
+    fun nightDeathsDone() {
+        val state = gameState.value ?: return
+        advancePhase(state)
+        gameState.value = state
     }
 
     fun getPlayerById(id: Int): Player? =

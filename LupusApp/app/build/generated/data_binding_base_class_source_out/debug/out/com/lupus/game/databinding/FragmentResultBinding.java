@@ -21,6 +21,9 @@ public final class FragmentResultBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button btnDeathLog;
+
+  @NonNull
   public final Button btnNewGame;
 
   @NonNull
@@ -35,10 +38,11 @@ public final class FragmentResultBinding implements ViewBinding {
   @NonNull
   public final TextView tvWinnerDesc;
 
-  private FragmentResultBinding(@NonNull LinearLayout rootView, @NonNull Button btnNewGame,
-      @NonNull TextView tvRoles, @NonNull TextView tvRoundInfo, @NonNull TextView tvWinner,
-      @NonNull TextView tvWinnerDesc) {
+  private FragmentResultBinding(@NonNull LinearLayout rootView, @NonNull Button btnDeathLog,
+      @NonNull Button btnNewGame, @NonNull TextView tvRoles, @NonNull TextView tvRoundInfo,
+      @NonNull TextView tvWinner, @NonNull TextView tvWinnerDesc) {
     this.rootView = rootView;
+    this.btnDeathLog = btnDeathLog;
     this.btnNewGame = btnNewGame;
     this.tvRoles = tvRoles;
     this.tvRoundInfo = tvRoundInfo;
@@ -73,6 +77,12 @@ public final class FragmentResultBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_death_log;
+      Button btnDeathLog = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeathLog == null) {
+        break missingId;
+      }
+
       id = R.id.btn_new_game;
       Button btnNewGame = ViewBindings.findChildViewById(rootView, id);
       if (btnNewGame == null) {
@@ -103,8 +113,8 @@ public final class FragmentResultBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentResultBinding((LinearLayout) rootView, btnNewGame, tvRoles, tvRoundInfo,
-          tvWinner, tvWinnerDesc);
+      return new FragmentResultBinding((LinearLayout) rootView, btnDeathLog, btnNewGame, tvRoles,
+          tvRoundInfo, tvWinner, tvWinnerDesc);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

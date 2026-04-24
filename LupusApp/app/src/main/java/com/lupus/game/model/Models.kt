@@ -29,6 +29,7 @@ enum class GamePhase(val priority: Int) {
     NIGHT_SEER(10),
     NIGHT_WOLVES(20),
     VIGILANTE(25),
+    NIGHT_DEATHS(29),
     DAY_VOTE(30),
     GAME_OVER(999)
 }
@@ -39,7 +40,14 @@ val PHASE_ROLE_REQUIREMENT: Map<GamePhase, Role?> = mapOf(
     GamePhase.NIGHT_SEER to Role.SEER,
     GamePhase.VIGILANTE to Role.VIGILANTE,
     GamePhase.NIGHT_WOLVES to Role.WOLF,
+    GamePhase.NIGHT_DEATHS to null,
     GamePhase.DAY_VOTE to null
+)
+
+data class DeathRecord(
+    val playerName: String,
+    val round: Int,
+    val isNight: Boolean
 )
 
 enum class Winner {
@@ -62,7 +70,8 @@ data class GameState(
     var phase: GamePhase = GamePhase.NIGHT_SEER,
     var lastKilledByWolves: Player? = null,
     var lastEliminatedByVote: Player? = null,
-    var winner: Winner = Winner.NONE
+    var winner: Winner = Winner.NONE,
+    val deathLog: MutableList<DeathRecord> = mutableListOf()
 ) {
     val alivePlayers get() = players.filter { it.isAlive }
     val aliveWolves get() = players.filter { it.isAlive && it.role == Role.WOLF }

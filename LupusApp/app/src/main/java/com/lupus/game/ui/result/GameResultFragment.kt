@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.lupus.game.R
 import com.lupus.game.databinding.FragmentResultBinding
 import com.lupus.game.model.Winner
+import com.lupus.game.ui.util.showDeathLogDialog
 import com.lupus.game.viewmodel.GameViewModel
 
 class GameResultFragment : Fragment() {
@@ -49,6 +50,10 @@ class GameResultFragment : Fragment() {
         }
         binding.tvRoles.text = rolesSummary
         binding.tvRoundInfo.text = "Partita durata ${state.round} round"
+
+        binding.btnDeathLog.setOnClickListener {
+            showDeathLogDialog(requireContext(), state.deathLog)
+        }
 
         binding.btnNewGame.setOnClickListener {
             findNavController().navigate(R.id.action_result_to_setup)

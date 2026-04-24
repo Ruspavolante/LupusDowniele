@@ -77,6 +77,16 @@
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/btn_death_log"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="📜 Cronologia morti"
+        android:textSize="16sp"
+        android:background="@drawable/bg_button_primary"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
         android:id="@+id/btn_new_game"
         android:layout_width="match_parent"
         android:layout_height="56dp"

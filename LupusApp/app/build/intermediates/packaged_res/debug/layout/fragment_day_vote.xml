@@ -37,13 +37,33 @@
             android:layout_marginTop="4dp"/>
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Il villaggio vota chi eliminare:"
-        android:textSize="18sp"
-        android:textColor="@color/text_primary"
-        android:padding="20dp"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Il villaggio vota chi eliminare:"
+            android:textSize="18sp"
+            android:textColor="@color/text_primary"/>
+
+        <Button
+            android:id="@+id/btn_death_log"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="📜 Cronologia"
+            android:textSize="13sp"
+            android:background="@drawable/bg_button_primary"
+            android:paddingHorizontal="12dp"/>
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_vote_players"

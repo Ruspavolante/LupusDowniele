@@ -52,10 +52,11 @@ class NightSeerFragment : BaseNightRoleFragment() {
 
     override fun navigationActionFor(phase: GamePhase) = when (phase) {
         GamePhase.NIGHT_WOLVES -> R.id.action_night_seer_to_wolves
-        GamePhase.DAY_VOTE     -> R.id.action_night_seer_to_day
         GamePhase.VIGILANTE    -> R.id.action_night_seer_to_vigilante
+        GamePhase.NIGHT_DEATHS -> R.id.action_night_seer_to_night_deaths
+        GamePhase.DAY_VOTE     -> R.id.action_night_seer_to_day
         GamePhase.GAME_OVER    -> R.id.action_night_seer_to_result
-        else                   -> R.id.action_night_seer_to_day
+        else                   -> R.id.action_night_seer_to_night_deaths
     }
 
     override fun onDestroyView() {

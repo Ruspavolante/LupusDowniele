@@ -84,6 +84,11 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
+            android:id="@+id/action_night_seer_to_night_deaths"
+            app:destination="@id/nightDeathsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
             android:id="@+id/action_night_seer_to_day"
             app:destination="@id/dayVoteFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -106,6 +111,11 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
+            android:id="@+id/action_vigilante_to_night_deaths"
+            app:destination="@id/nightDeathsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
             android:id="@+id/action_vigilante_to_day"
             app:destination="@id/dayVoteFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -123,6 +133,11 @@
         android:label="Notte - Lupi"
         tools:layout="@layout/fragment_night_wolves">
         <action
+            android:id="@+id/action_night_wolves_to_night_deaths"
+            app:destination="@id/nightDeathsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
             android:id="@+id/action_night_wolves_to_day"
             app:destination="@id/dayVoteFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -135,6 +150,23 @@
         <action
             android:id="@+id/action_night_wolves_to_vigilante"
             app:destination="@id/vigilanteFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nightDeathsFragment"
+        android:name="com.lupus.game.ui.night.NightDeathsFragment"
+        android:label="Notte - Vittime"
+        tools:layout="@layout/fragment_night_deaths">
+        <action
+            android:id="@+id/action_night_deaths_to_day"
+            app:destination="@id/dayVoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_night_deaths_to_result"
+            app:destination="@id/gameResultFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"/>
     </fragment>

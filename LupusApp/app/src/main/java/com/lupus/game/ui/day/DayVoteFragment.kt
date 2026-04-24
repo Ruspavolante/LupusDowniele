@@ -13,6 +13,7 @@ import com.lupus.game.R
 import com.lupus.game.databinding.FragmentDayVoteBinding
 import com.lupus.game.model.Player
 import com.lupus.game.ui.adapters.PlayerSelectAdapter
+import com.lupus.game.ui.util.showDeathLogDialog
 import com.lupus.game.viewmodel.GameViewModel
 
 class DayVoteFragment : Fragment() {
@@ -38,6 +39,10 @@ class DayVoteFragment : Fragment() {
         }
         binding.rvVotePlayers.layoutManager = LinearLayoutManager(requireContext())
         binding.rvVotePlayers.adapter = adapter
+
+        binding.btnDeathLog.setOnClickListener {
+            showDeathLogDialog(requireContext(), state.deathLog)
+        }
 
         binding.btnEliminate.setOnClickListener {
             val target = selectedPlayer

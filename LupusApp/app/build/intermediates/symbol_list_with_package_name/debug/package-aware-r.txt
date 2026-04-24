@@ -3230,11 +3230,15 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_names_to_roles
+id action_night_deaths_to_day
+id action_night_deaths_to_result
 id action_night_seer_to_day
+id action_night_seer_to_night_deaths
 id action_night_seer_to_result
 id action_night_seer_to_vigilante
 id action_night_seer_to_wolves
 id action_night_wolves_to_day
+id action_night_wolves_to_night_deaths
 id action_night_wolves_to_result
 id action_night_wolves_to_vigilante
 id action_result_to_setup
@@ -3244,6 +3248,7 @@ id action_roles_to_reveal
 id action_setup_to_names
 id action_text
 id action_vigilante_to_day
+id action_vigilante_to_night_deaths
 id action_vigilante_to_result
 id action_vigilante_to_wolves
 id action_vote_result_to_seer
@@ -3281,7 +3286,9 @@ id bounceEnd
 id bounceStart
 id btn_confirm_kill
 id btn_continue
+id btn_continue_day
 id btn_continue_to_day
+id btn_death_log
 id btn_eliminate
 id btn_new_game
 id btn_next
@@ -3293,6 +3300,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id card_deaths
 id card_reveal
 id carryVelocity
 id center
@@ -3442,6 +3450,7 @@ id line3
 id linear
 id listMode
 id list_item
+id ll_deaths_list
 id ll_names
 id locale
 id ltr
@@ -3519,6 +3528,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nightDeathsFragment
 id nightSeerFragment
 id nightWolvesFragment
 id noScroll
@@ -3701,6 +3711,8 @@ id tv_alive_players
 id tv_day_round
 id tv_description
 id tv_kill_announcement
+id tv_night_round
+id tv_no_deaths
 id tv_pass_instruction
 id tv_player_name
 id tv_reveal_result
@@ -3877,6 +3889,7 @@ layout design_text_input_start_icon
 layout fragment_day_vote
 layout fragment_game
 layout fragment_kill_result
+layout fragment_night_deaths
 layout fragment_night_seer
 layout fragment_night_wolves
 layout fragment_player_names

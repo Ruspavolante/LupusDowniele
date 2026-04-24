@@ -22,6 +22,9 @@ public final class FragmentDayVoteBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final Button btnDeathLog;
+
+  @NonNull
   public final Button btnEliminate;
 
   @NonNull
@@ -33,10 +36,11 @@ public final class FragmentDayVoteBinding implements ViewBinding {
   @NonNull
   public final TextView tvDayRound;
 
-  private FragmentDayVoteBinding(@NonNull LinearLayout rootView, @NonNull Button btnEliminate,
-      @NonNull RecyclerView rvVotePlayers, @NonNull TextView tvAlivePlayers,
-      @NonNull TextView tvDayRound) {
+  private FragmentDayVoteBinding(@NonNull LinearLayout rootView, @NonNull Button btnDeathLog,
+      @NonNull Button btnEliminate, @NonNull RecyclerView rvVotePlayers,
+      @NonNull TextView tvAlivePlayers, @NonNull TextView tvDayRound) {
     this.rootView = rootView;
+    this.btnDeathLog = btnDeathLog;
     this.btnEliminate = btnEliminate;
     this.rvVotePlayers = rvVotePlayers;
     this.tvAlivePlayers = tvAlivePlayers;
@@ -70,6 +74,12 @@ public final class FragmentDayVoteBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_death_log;
+      Button btnDeathLog = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeathLog == null) {
+        break missingId;
+      }
+
       id = R.id.btn_eliminate;
       Button btnEliminate = ViewBindings.findChildViewById(rootView, id);
       if (btnEliminate == null) {
@@ -94,8 +104,8 @@ public final class FragmentDayVoteBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentDayVoteBinding((LinearLayout) rootView, btnEliminate, rvVotePlayers,
-          tvAlivePlayers, tvDayRound);
+      return new FragmentDayVoteBinding((LinearLayout) rootView, btnDeathLog, btnEliminate,
+          rvVotePlayers, tvAlivePlayers, tvDayRound);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
