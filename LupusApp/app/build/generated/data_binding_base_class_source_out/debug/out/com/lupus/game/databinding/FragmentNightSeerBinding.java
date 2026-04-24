@@ -26,6 +26,9 @@ public final class FragmentNightSeerBinding implements ViewBinding {
   public final Button btnContinueToDay;
 
   @NonNull
+  public final Button btnMaster;
+
+  @NonNull
   public final Button btnReveal;
 
   @NonNull
@@ -41,10 +44,12 @@ public final class FragmentNightSeerBinding implements ViewBinding {
   public final TextView tvSeerName;
 
   private FragmentNightSeerBinding(@NonNull LinearLayout rootView, @NonNull Button btnContinueToDay,
-      @NonNull Button btnReveal, @NonNull CardView cardReveal, @NonNull RecyclerView rvTargets,
-      @NonNull TextView tvRevealResult, @NonNull TextView tvSeerName) {
+      @NonNull Button btnMaster, @NonNull Button btnReveal, @NonNull CardView cardReveal,
+      @NonNull RecyclerView rvTargets, @NonNull TextView tvRevealResult,
+      @NonNull TextView tvSeerName) {
     this.rootView = rootView;
     this.btnContinueToDay = btnContinueToDay;
+    this.btnMaster = btnMaster;
     this.btnReveal = btnReveal;
     this.cardReveal = cardReveal;
     this.rvTargets = rvTargets;
@@ -85,6 +90,12 @@ public final class FragmentNightSeerBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_master;
+      Button btnMaster = ViewBindings.findChildViewById(rootView, id);
+      if (btnMaster == null) {
+        break missingId;
+      }
+
       id = R.id.btn_reveal;
       Button btnReveal = ViewBindings.findChildViewById(rootView, id);
       if (btnReveal == null) {
@@ -115,8 +126,8 @@ public final class FragmentNightSeerBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentNightSeerBinding((LinearLayout) rootView, btnContinueToDay, btnReveal,
-          cardReveal, rvTargets, tvRevealResult, tvSeerName);
+      return new FragmentNightSeerBinding((LinearLayout) rootView, btnContinueToDay, btnMaster,
+          btnReveal, cardReveal, rvTargets, tvRevealResult, tvSeerName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

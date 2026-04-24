@@ -3290,6 +3290,7 @@ id btn_continue_day
 id btn_continue_to_day
 id btn_death_log
 id btn_eliminate
+id btn_master
 id btn_new_game
 id btn_next
 id btn_next_round

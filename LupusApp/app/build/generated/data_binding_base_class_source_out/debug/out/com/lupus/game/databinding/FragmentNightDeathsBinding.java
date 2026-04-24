@@ -25,6 +25,9 @@ public final class FragmentNightDeathsBinding implements ViewBinding {
   public final Button btnContinueDay;
 
   @NonNull
+  public final Button btnMaster;
+
+  @NonNull
   public final CardView cardDeaths;
 
   @NonNull
@@ -37,10 +40,11 @@ public final class FragmentNightDeathsBinding implements ViewBinding {
   public final TextView tvNoDeaths;
 
   private FragmentNightDeathsBinding(@NonNull LinearLayout rootView, @NonNull Button btnContinueDay,
-      @NonNull CardView cardDeaths, @NonNull LinearLayout llDeathsList,
+      @NonNull Button btnMaster, @NonNull CardView cardDeaths, @NonNull LinearLayout llDeathsList,
       @NonNull TextView tvNightRound, @NonNull TextView tvNoDeaths) {
     this.rootView = rootView;
     this.btnContinueDay = btnContinueDay;
+    this.btnMaster = btnMaster;
     this.cardDeaths = cardDeaths;
     this.llDeathsList = llDeathsList;
     this.tvNightRound = tvNightRound;
@@ -80,6 +84,12 @@ public final class FragmentNightDeathsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_master;
+      Button btnMaster = ViewBindings.findChildViewById(rootView, id);
+      if (btnMaster == null) {
+        break missingId;
+      }
+
       id = R.id.card_deaths;
       CardView cardDeaths = ViewBindings.findChildViewById(rootView, id);
       if (cardDeaths == null) {
@@ -104,8 +114,8 @@ public final class FragmentNightDeathsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentNightDeathsBinding((LinearLayout) rootView, btnContinueDay, cardDeaths,
-          llDeathsList, tvNightRound, tvNoDeaths);
+      return new FragmentNightDeathsBinding((LinearLayout) rootView, btnContinueDay, btnMaster,
+          cardDeaths, llDeathsList, tvNightRound, tvNoDeaths);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

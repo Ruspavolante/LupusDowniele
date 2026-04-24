@@ -1,186 +1,202 @@
 [
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_day_vote.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_day_vote.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\anim_fade_in.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\anim\\fade_in.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_bg_card_dark.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/bg_card_dark.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_vote_result.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_vote_result.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_kill_result.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_kill_result.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_night_deaths.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_night_deaths.xml"
     },
     {
         "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_vigilante.xml.flat",
         "source": "com.lupus.game.app-main-51:/layout/fragment_vigilante.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_role_seer.jpg.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/ic_role_seer.jpg"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_ic_role_wolf.jpg.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\ic_role_wolf.jpg"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/anim_slide_out_left.xml.flat",
-        "source": "com.lupus.game.app-main-51:/anim/slide_out_left.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_setup.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_setup.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_night_wolves.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_night_wolves.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_bg_edit_text.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/bg_edit_text.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_day_vote.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_day_vote.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_bg_player_item.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_player_item.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_bg_card_dark.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_card_dark.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_bg_button_primary.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_button_primary.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_role_reveal.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_role_reveal.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_item_player_select.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/item_player_select.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_bg_player_item.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/bg_player_item.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_bg_button_primary.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/bg_button_primary.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_night_seer.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_night_seer.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/navigation_nav_graph.xml.flat",
-        "source": "com.lupus.game.app-main-51:/navigation/nav_graph.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_player_names.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_player_names.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/anim_fade_out.xml.flat",
-        "source": "com.lupus.game.app-main-51:/anim/fade_out.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_vote_result.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_vote_result.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_role_villager.jpg.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/ic_role_villager.jpg"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_bg_button_vigilante.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/bg_button_vigilante.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_night_deaths.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_night_deaths.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_bg_button_seer.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/bg_button_seer.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_role_wolf.jpg.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/ic_role_wolf.jpg"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_bg_button_danger.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/bg_button_danger.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_roles_setup.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_roles_setup.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_check_circle.xml.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/ic_check_circle.xml"
-    },
-    {
-        "merged": "com.lupus.game.app-merged_res-49:/anim_slide_in_right.xml.flat",
-        "source": "com.lupus.game.app-main-51:/anim/slide_in_right.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_night_seer.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_night_seer.xml"
     },
     {
         "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_night_wolves.xml.flat",
         "source": "com.lupus.game.app-main-51:/layout/fragment_night_wolves.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/anim_fade_in.xml.flat",
-        "source": "com.lupus.game.app-main-51:/anim/fade_in.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_game.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_game.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/drawable_ic_role_vigilante.jpg.flat",
-        "source": "com.lupus.game.app-main-51:/drawable/ic_role_vigilante.jpg"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_game.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_game.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_player_names.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_player_names.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_activity_main.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/activity_main.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_kill_result.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_kill_result.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_result.xml.flat",
-        "source": "com.lupus.game.app-main-51:/layout/fragment_result.xml"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.lupus.game.app-merged_res-49:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.lupus.game.app-main-51:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_role_reveal.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_role_reveal.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_bg_button_vigilante.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_button_vigilante.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_result.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_bg_button_danger.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_button_danger.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_item_player_select.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\item_player_select.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_bg_edit_text.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_edit_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_bg_button_seer.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\bg_button_seer.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\anim_fade_out.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_night_seer.xml.flat",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_night_seer.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.lupus.game.app-merged_res-49:/layout_fragment_night_deaths.xml.flat",
+        "source": "com.lupus.game.app-main-51:/layout/fragment_night_deaths.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_ic_role_villager.jpg.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\ic_role_villager.jpg"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_ic_role_seer.jpg.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\ic_role_seer.jpg"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_roles_setup.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_roles_setup.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_ic_role_vigilante.jpg.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\ic_role_vigilante.jpg"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_setup.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_setup.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\layout_fragment_vigilante.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\layout\\fragment_vigilante.xml"
+    },
+    {
+        "merged": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-merged_res-49:\\drawable_ic_check_circle.xml.flat",
+        "source": "C:\\Users\\d.amati\\.gradle\\daemon\\8.6\\com.lupus.game.app-main-51:\\drawable\\ic_check_circle.xml"
     }
 ]

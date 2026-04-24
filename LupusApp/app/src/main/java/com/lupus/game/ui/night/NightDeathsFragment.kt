@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.lupus.game.R
 import com.lupus.game.databinding.FragmentNightDeathsBinding
 import com.lupus.game.model.GamePhase
+import com.lupus.game.ui.util.showMasterRolesDialog
 import com.lupus.game.viewmodel.GameViewModel
 
 class NightDeathsFragment : Fragment() {
@@ -29,6 +30,10 @@ class NightDeathsFragment : Fragment() {
 
         val state = viewModel.gameState.value ?: return
         binding.tvNightRound.text = "Notte ${state.round}"
+
+        binding.btnMaster.setOnClickListener {
+            showMasterRolesDialog(requireContext(), state.players)
+        }
 
         val nightDeaths = state.deathLog.filter { it.round == state.round && it.isNight }
 

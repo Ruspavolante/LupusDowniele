@@ -25,6 +25,9 @@ public final class FragmentNightWolvesBinding implements ViewBinding {
   public final Button btnConfirmKill;
 
   @NonNull
+  public final Button btnMaster;
+
+  @NonNull
   public final RecyclerView rvTargets;
 
   @NonNull
@@ -34,10 +37,11 @@ public final class FragmentNightWolvesBinding implements ViewBinding {
   public final TextView tvWolvesToCall;
 
   private FragmentNightWolvesBinding(@NonNull LinearLayout rootView, @NonNull Button btnConfirmKill,
-      @NonNull RecyclerView rvTargets, @NonNull TextView tvRound,
+      @NonNull Button btnMaster, @NonNull RecyclerView rvTargets, @NonNull TextView tvRound,
       @NonNull TextView tvWolvesToCall) {
     this.rootView = rootView;
     this.btnConfirmKill = btnConfirmKill;
+    this.btnMaster = btnMaster;
     this.rvTargets = rvTargets;
     this.tvRound = tvRound;
     this.tvWolvesToCall = tvWolvesToCall;
@@ -76,6 +80,12 @@ public final class FragmentNightWolvesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btn_master;
+      Button btnMaster = ViewBindings.findChildViewById(rootView, id);
+      if (btnMaster == null) {
+        break missingId;
+      }
+
       id = R.id.rv_targets;
       RecyclerView rvTargets = ViewBindings.findChildViewById(rootView, id);
       if (rvTargets == null) {
@@ -94,8 +104,8 @@ public final class FragmentNightWolvesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentNightWolvesBinding((LinearLayout) rootView, btnConfirmKill, rvTargets,
-          tvRound, tvWolvesToCall);
+      return new FragmentNightWolvesBinding((LinearLayout) rootView, btnConfirmKill, btnMaster,
+          rvTargets, tvRound, tvWolvesToCall);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

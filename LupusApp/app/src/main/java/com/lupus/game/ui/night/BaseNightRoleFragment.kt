@@ -12,6 +12,7 @@ import com.lupus.game.model.GamePhase
 import com.lupus.game.model.GameState
 import com.lupus.game.model.Player
 import com.lupus.game.ui.adapters.PlayerSelectAdapter
+import com.lupus.game.ui.util.showMasterRolesDialog
 import com.lupus.game.viewmodel.GameViewModel
 
 // Dati che ogni ruolo deve fornire alla view base
@@ -55,6 +56,10 @@ abstract class BaseNightRoleFragment : Fragment() {
 
         val state = viewModel.gameState.value ?: return
         val config = buildConfig(state)
+
+        view.findViewById<android.widget.Button>(R.id.btn_master)?.setOnClickListener {
+            showMasterRolesDialog(requireContext(), state.players)
+        }
 
         val tvRoleName = view.findViewById<android.widget.TextView>(tvRoleNameId)
         val rvTargets = view.findViewById<androidx.recyclerview.widget.RecyclerView>(rvTargetsId)

@@ -3289,6 +3289,7 @@ int id btn_continue_day 0x7f08007e
 int id btn_continue_to_day 0x7f08007f
 int id btn_death_log 0x7f080080
 int id btn_eliminate 0x7f080081
+int id btn_master 0x7f080252
 int id btn_new_game 0x7f080082
 int id btn_next 0x7f080083
 int id btn_next_round 0x7f080084
