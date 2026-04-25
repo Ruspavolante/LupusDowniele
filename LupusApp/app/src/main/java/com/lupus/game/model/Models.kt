@@ -93,7 +93,6 @@ data class GameState(
     // Costruisce la lista ordinata delle fasi attive per questo round
     // basandosi sui ruoli ancora vivi
     fun buildPhaseQueue(): List<GamePhase> {
-        print(players)
         return PHASE_ROLE_REQUIREMENT.entries
             .filter { (_, requiredRole) ->
                 requiredRole == null || players.any { it.role == requiredRole }

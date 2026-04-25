@@ -99,15 +99,6 @@ class GameViewModel : ViewModel() {
 
     }
 
-    fun confirmKills() {
-        val state = gameState.value ?: return
-        val deadPlayers = state.players.filter { it.killedInRound }
-
-        for (pl in deadPlayers) {
-            pl.isAlive = false
-        }
-    }
-
     fun seerDone() {
         val state = gameState.value ?: return
         advancePhase(state)

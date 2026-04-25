@@ -15,7 +15,7 @@ import com.lupus.game.viewmodel.GameViewModel
 class RolesSetupFragment : Fragment() {
 
     private var _binding: FragmentRolesSetupBinding? = null
-private val binding get() = _binding!!
+    private val binding get() = _binding!!
     private val viewModel: GameViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
