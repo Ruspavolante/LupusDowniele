@@ -11,9 +11,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lupus.game.R
-import com.lupus.game.constants.WENDIGO_CALL
-import com.lupus.game.constants.WENDIGO_DEAD
-import com.lupus.game.databinding.FragmentWendigoBinding
+import com.lupus.game.constants.BOIA_CALL
+import com.lupus.game.constants.BOIA_DEAD
+import com.lupus.game.constants.BOIA_SPENT
+import com.lupus.game.databinding.FragmentBoiaBinding
 import com.lupus.game.model.GamePhase
 import com.lupus.game.model.Player
 import com.lupus.game.model.Role
@@ -21,15 +22,15 @@ import com.lupus.game.ui.adapters.PlayerSelectAdapter
 import com.lupus.game.ui.util.showMasterRolesDialog
 import com.lupus.game.viewmodel.GameViewModel
 
-class WendigoFragment : Fragment() {
+class BoiaFragment : Fragment() {
 
-    private var _binding: FragmentWendigoBinding? = null
+    private var _binding: FragmentBoiaBinding? = null
     private val binding get() = _binding!!
     private val viewModel: GameViewModel by activityViewModels()
     private var selectedTarget: Player? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentWendigoBinding.inflate(inflater, container, false)
+        _binding = FragmentBoiaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,30 +38,37 @@ class WendigoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val state = viewModel.gameState.value ?: return
-        val wendigo = state.players.firstOrNull { it.role == Role.WENDIGO }
-        val isAlive = wendigo?.isAlive == true
+        val boia = state.players.firstOrNull { it.role == Role.BOIA }
+        val isAlive = boia?.isAlive == true
 
         binding.btnMaster.setOnClickListener {
             showMasterRolesDialog(requireContext(), state.players)
         }
 
         if (!isAlive) {
-            binding.tvWendigoHeader.text = WENDIGO_DEAD
+            binding.tvBoiaHeader.text = BOIA_DEAD
             binding.layoutAction.visibility = View.GONE
             binding.btnContinueDead.visibility = View.VISIBLE
             binding.btnContinueDead.setOnClickListener { navigateNext() }
             return
         }
 
-        binding.tvWendigoHeader.text = WENDIGO_CALL + (wendigo?.name ?: "")
+        val hasActed = boia?.isLoaded == false
+        if (hasActed) {
+            binding.tvBoiaHeader.text = BOIA_SPENT
+            binding.layoutAction.visibility = View.GONE
+            binding.btnContinueDead.visibility = View.VISIBLE
+            binding.btnContinueDead.setOnClickListener { navigateNext() }
+            return
+        }
 
-        // Target list: all alive players except the wendigo
-        val targets = state.alivePlayers.filter { it.id != wendigo?.id }
+        binding.tvBoiaHeader.text = BOIA_CALL + (boia?.name ?: "")
+
+        val targets = state.alivePlayers.filter { it.id != boia?.id }
         val adapter = PlayerSelectAdapter(targets) { player -> selectedTarget = player }
         binding.rvTargets.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTargets.adapter = adapter
 
-        // Role radio buttons: all distinct roles in the game
         val roles = state.players.map { it.role }.distinct()
         roles.forEach { role ->
             val rb = RadioButton(requireContext()).apply {
@@ -72,7 +80,7 @@ class WendigoFragment : Fragment() {
             binding.rgRoles.addView(rb)
         }
 
-        binding.btnWendigoAct.setOnClickListener {
+        binding.btnBoiaAct.setOnClickListener {
             val target = selectedTarget
             if (target == null) {
                 Toast.makeText(requireContext(), "Seleziona un bersaglio", Toast.LENGTH_SHORT).show()
@@ -84,12 +92,12 @@ class WendigoFragment : Fragment() {
                 return@setOnClickListener
             }
             val guessedRole = binding.rgRoles.findViewById<RadioButton>(selectedRbId).tag as Role
-            viewModel.wendigoAct(target.id, guessedRole)
+            viewModel.boiaAct(boia!!.id, target.id, guessedRole)
             navigateNext()
         }
 
-        binding.btnWendigoSkip.setOnClickListener {
-            viewModel.wendigoDone()
+        binding.btnBoiaSkip.setOnClickListener {
+            viewModel.boiaDone()
             navigateNext()
         }
     }
@@ -100,10 +108,9 @@ class WendigoFragment : Fragment() {
     }
 
     private fun navigationActionFor(phase: GamePhase) = when (phase) {
-        GamePhase.NIGHT_BOIA   -> R.id.action_wendigo_to_boia
-        GamePhase.VIGILANTE    -> R.id.action_wendigo_to_vigilante
-        GamePhase.GAME_OVER    -> R.id.action_wendigo_to_result
-        else                   -> R.id.action_wendigo_to_night_deaths
+        GamePhase.VIGILANTE   -> R.id.action_boia_to_vigilante
+        GamePhase.GAME_OVER   -> R.id.action_boia_to_result
+        else                  -> R.id.action_boia_to_night_deaths
     }
 
     override fun onDestroyView() {

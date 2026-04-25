@@ -13,14 +13,15 @@ class GameViewModel : ViewModel() {
 
     val gameState = MutableLiveData<GameState>()
 
-    fun startGame(playerNames: List<String>, wolfCount: Int, seerCount: Int, vigilanteCount: Int, wendigoCount: Int = 0, knightCount: Int = 0) {
+    fun startGame(playerNames: List<String>, wolfCount: Int, seerCount: Int, vigilanteCount: Int, wendigoCount: Int = 0, knightCount: Int = 0, boiaCount: Int = 0) {
         val roles = mutableListOf<Role>()
         repeat(wolfCount) { roles.add(Role.WOLF) }
         repeat(seerCount) { roles.add(Role.SEER) }
         repeat(vigilanteCount) { roles.add(Role.VIGILANTE) }
         repeat(wendigoCount) { roles.add(Role.WENDIGO) }
         repeat(knightCount) { roles.add(Role.KNIGHT) }
-        repeat(playerNames.size - wolfCount - seerCount - vigilanteCount - wendigoCount - knightCount) { roles.add(Role.VILLAGER) }
+        repeat(boiaCount) { roles.add(Role.BOIA) }
+        repeat(playerNames.size - wolfCount - seerCount - vigilanteCount - wendigoCount - knightCount - boiaCount) { roles.add(Role.VILLAGER) }
         roles.shuffle()
 
         val players = playerNames.mapIndexed { index, name ->
@@ -134,6 +135,26 @@ class GameViewModel : ViewModel() {
     }
 
     fun wendigoDone() {
+        val state = gameState.value ?: return
+        advancePhase(state)
+        gameState.value = state
+    }
+
+    fun boiaAct(boiaId: Int, targetId: Int, guessedRole: Role) {
+        val state = gameState.value ?: return
+        val target = state.players.find { it.id == targetId } ?: return
+        val boia = state.players.find { it.id == boiaId } ?: return
+        boia.isLoaded = false
+        if (target.role == guessedRole) {
+            target.killedInRound = true
+        } else {
+            boia.killedInRound = true
+        }
+        advancePhase(state)
+        gameState.value = state
+    }
+
+    fun boiaDone() {
         val state = gameState.value ?: return
         advancePhase(state)
         gameState.value = state

@@ -80,6 +80,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/setupFragment"
             app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_reveal_to_boia"
+            app:destination="@id/boiaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/setupFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
 
     <fragment
@@ -115,6 +122,11 @@
         <action
             android:id="@+id/action_night_seer_to_day"
             app:destination="@id/dayVoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_night_seer_to_boia"
+            app:destination="@id/boiaFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
@@ -176,6 +188,11 @@
             app:destination="@id/gameResultFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"/>
+        <action
+            android:id="@+id/action_night_wolves_to_boia"
+            app:destination="@id/boiaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_night_wolves_to_vigilante"
             app:destination="@id/vigilanteFragment"
@@ -250,6 +267,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/knightFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_vote_result_to_boia"
+            app:destination="@id/boiaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/boiaFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -282,6 +306,11 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
         <action
+            android:id="@+id/action_knight_to_boia"
+            app:destination="@id/boiaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
             android:id="@+id/action_knight_to_vigilante"
             app:destination="@id/vigilanteFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -309,6 +338,11 @@
         android:label="Notte - Wendigo"
         tools:layout="@layout/fragment_wendigo">
         <action
+            android:id="@+id/action_wendigo_to_boia"
+            app:destination="@id/boiaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
             android:id="@+id/action_wendigo_to_vigilante"
             app:destination="@id/vigilanteFragment"
             app:enterAnim="@anim/slide_in_right"
@@ -320,6 +354,28 @@
             app:exitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_wendigo_to_result"
+            app:destination="@id/gameResultFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/boiaFragment"
+        android:name="com.lupus.game.ui.night.BoiaFragment"
+        android:label="Notte - Boia"
+        tools:layout="@layout/fragment_boia">
+        <action
+            android:id="@+id/action_boia_to_vigilante"
+            app:destination="@id/vigilanteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_boia_to_night_deaths"
+            app:destination="@id/nightDeathsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_boia_to_result"
             app:destination="@id/gameResultFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"/>

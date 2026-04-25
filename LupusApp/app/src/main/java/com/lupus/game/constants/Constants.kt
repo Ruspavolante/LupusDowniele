@@ -15,6 +15,11 @@ const val WENDIGO_CALL   = "Chiama il wendigo:\n"
 const val WENDIGO_DEAD   = "Il wendigo è morto — fase saltata"
 const val WENDIGO_ACTION = "🌑 Usa potere"
 
+const val BOIA_CALL   = "Chiama il boia:\n"
+const val BOIA_DEAD   = "Il boia è morto — fase saltata"
+const val BOIA_SPENT  = "Il boia ha già colpito — fase saltata"
+const val BOIA_ACTION = "⚔️ Esegui condanna"
+
 const val VIGILANTE_CALL = "Chiama il giustiziere:\n"
 const val VIGILANTE_DEAD = "Il giustiziere è morto — fase saltata"
 const val VIGILANTE_ACTION = "\uD83D\uDCA5 Giustizia"

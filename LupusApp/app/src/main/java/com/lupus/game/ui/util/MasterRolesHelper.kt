@@ -30,6 +30,7 @@ private fun buildRolesText(players: List<Player>): String =
             Role.VIGILANTE -> "💥"
             Role.WENDIGO   -> "🌑"
             Role.KNIGHT    -> "🛡️"
+            Role.BOIA      -> "⚔️"
         }
         "$status ${p.name} — $emoji ${p.role.displayName}"
     }

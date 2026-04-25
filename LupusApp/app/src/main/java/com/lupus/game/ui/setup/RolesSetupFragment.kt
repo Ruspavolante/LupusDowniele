@@ -37,7 +37,8 @@ class RolesSetupFragment : Fragment() {
             val vigilanti = binding.npVigilanti.value
             val wendigo = binding.npWendigo.value
             val knight = binding.npKnight.value
-            val villagers = total - wolves - seers - vigilanti - wendigo - knight
+            val boia = binding.npBoia.value
+            val villagers = total - wolves - seers - vigilanti - wendigo - knight - boia
             binding.tvVillagers.text = "Villici: ${if (villagers >= 0) villagers else "⚠️"}"
         }
 
@@ -76,6 +77,13 @@ class RolesSetupFragment : Fragment() {
             setOnValueChangedListener { _, _, _ -> updateVillagers() }
         }
 
+        binding.npBoia.apply {
+            minValue = 0
+            maxValue = 1
+            value = 0
+            setOnValueChangedListener { _, _, _ -> updateVillagers() }
+        }
+
         updateVillagers()
 
         binding.btnStartGame.setOnClickListener {
@@ -84,18 +92,19 @@ class RolesSetupFragment : Fragment() {
             val vigilanti = binding.npVigilanti.value
             val wendigo = binding.npWendigo.value
             val knight = binding.npKnight.value
-            val villagers = total - wolves - seers - vigilanti - wendigo - knight
+            val boia = binding.npBoia.value
+            val villagers = total - wolves - seers - vigilanti - wendigo - knight - boia
 
             if (villagers < 0) {
                 Toast.makeText(requireContext(), "Troppi ruoli speciali!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (villagers == 0 && seers == 0 && vigilanti == 0 && wendigo == 0 && knight == 0) {
+            if (villagers == 0 && seers == 0 && vigilanti == 0 && wendigo == 0 && knight == 0 && boia == 0) {
                 Toast.makeText(requireContext(), "Ci deve essere almeno un non-lupo", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            viewModel.startGame(names, wolves, seers, vigilanti, wendigo, knight)
+            viewModel.startGame(names, wolves, seers, vigilanti, wendigo, knight, boia)
             findNavController().navigate(R.id.action_roles_to_reveal)
         }
     }

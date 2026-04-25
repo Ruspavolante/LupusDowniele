@@ -139,6 +139,28 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
+        <!-- Boia -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⚔️ Boia"
+                android:textSize="20sp"
+                android:textColor="@color/boia_color"/>
+
+            <NumberPicker
+                android:id="@+id/np_boia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
         <!-- Villagers count -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

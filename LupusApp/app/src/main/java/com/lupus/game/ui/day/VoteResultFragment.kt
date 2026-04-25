@@ -39,6 +39,7 @@ class VoteResultFragment : Fragment() {
                 GamePhase.NIGHT_SEER    -> findNavController().navigate(R.id.action_vote_result_to_seer)
                 GamePhase.NIGHT_KNIGHT  -> findNavController().navigate(R.id.action_vote_result_to_knight)
                 GamePhase.NIGHT_WENDIGO -> findNavController().navigate(R.id.action_vote_result_to_wendigo)
+                GamePhase.NIGHT_BOIA    -> findNavController().navigate(R.id.action_vote_result_to_boia)
                 else                    -> findNavController().navigate(R.id.action_vote_result_to_wolves)
             }
         }

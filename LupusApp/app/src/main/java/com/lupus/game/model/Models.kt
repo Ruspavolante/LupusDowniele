@@ -26,7 +26,10 @@ enum class Role(
         "Vince da solo. Deve restare in gioco con un solo altro giocatore."),
     KNIGHT("Cavaliere", false,
         "Ogni notte puoi proteggere un altro giocatore dall'attacco dei lupi. Non puoi proteggere te stesso. Giustiziere e Wendigo ignorano la tua protezione.",
-        "Vince con i buoni.")
+        "Vince con i buoni."),
+    BOIA("Boia", true,
+        "Ogni notte puoi scegliere un giocatore e indovinare il suo ruolo. Se indovini, quel giocatore muore. Se sbagli, muori tu.",
+        "Vince con i lupi.")
 }
 
 // Ogni fase ha una priorità — ordine crescente = ordine di esecuzione nel round
@@ -36,6 +39,7 @@ enum class GamePhase(val priority: Int) {
     NIGHT_KNIGHT(15),
     NIGHT_WOLVES(20),
     NIGHT_WENDIGO(22),
+    NIGHT_BOIA(23),
     VIGILANTE(25),
     NIGHT_DEATHS(29),
     DAY_VOTE(30),
@@ -49,6 +53,7 @@ val PHASE_ROLE_REQUIREMENT: Map<GamePhase, Role?> = mapOf(
     GamePhase.NIGHT_KNIGHT to Role.KNIGHT,
     GamePhase.NIGHT_WOLVES to Role.WOLF,
     GamePhase.NIGHT_WENDIGO to Role.WENDIGO,
+    GamePhase.NIGHT_BOIA to Role.BOIA,
     GamePhase.VIGILANTE to Role.VIGILANTE,
     GamePhase.NIGHT_DEATHS to null,
     GamePhase.DAY_VOTE to null
@@ -87,6 +92,7 @@ data class GameState(
 ) {
     val alivePlayers get() = players.filter { it.isAlive }
     val aliveWolves get() = players.filter { it.isAlive && it.role == Role.WOLF }
+    val aliveEvil  get() = players.filter { it.isAlive && it.role.isEvil }
     val aliveWendigo get() = players.filter { it.isAlive && it.role == Role.WENDIGO }
     val aliveGood get() = players.filter { it.isAlive && !it.role.isEvil && it.role != Role.WENDIGO }
 
@@ -110,13 +116,13 @@ data class GameState(
     }
 
     fun checkWinner(): Winner {
-        val wolves = aliveWolves.size
-        val good = aliveGood.size
+        val evil    = aliveEvil.size
+        val good    = aliveGood.size
         val wendigo = aliveWendigo.size
-        val total = alivePlayers.size
+        val total   = alivePlayers.size
         if (wendigo == 1 && total == 2) return Winner.WENDIGO
-        if (wolves == 0 && wendigo == 0) return Winner.GOOD
-        if (wolves >= good + wendigo) return Winner.EVIL
+        if (evil == 0 && wendigo == 0) return Winner.GOOD
+        if (evil >= good + wendigo) return Winner.EVIL
         return Winner.NONE
     }
 }

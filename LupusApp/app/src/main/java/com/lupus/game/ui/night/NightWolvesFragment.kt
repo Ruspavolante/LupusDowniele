@@ -74,6 +74,7 @@ class NightWolvesFragment : Fragment() {
 
     fun navigationActionFor(phase: GamePhase) = when (phase) {
         GamePhase.NIGHT_WENDIGO -> R.id.action_night_wolves_to_wendigo
+        GamePhase.NIGHT_BOIA    -> R.id.action_night_wolves_to_boia
         GamePhase.NIGHT_DEATHS  -> R.id.action_night_wolves_to_night_deaths
         GamePhase.DAY_VOTE      -> R.id.action_night_wolves_to_day
         GamePhase.GAME_OVER     -> R.id.action_night_wolves_to_result

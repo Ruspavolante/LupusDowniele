@@ -54,6 +54,7 @@ class KnightFragment : BaseNightRoleFragment() {
     override fun navigationActionFor(phase: GamePhase) = when (phase) {
         GamePhase.NIGHT_WOLVES  -> R.id.action_knight_to_wolves
         GamePhase.NIGHT_WENDIGO -> R.id.action_knight_to_wendigo
+        GamePhase.NIGHT_BOIA    -> R.id.action_knight_to_boia
         GamePhase.VIGILANTE     -> R.id.action_knight_to_vigilante
         GamePhase.NIGHT_DEATHS  -> R.id.action_knight_to_night_deaths
         GamePhase.DAY_VOTE      -> R.id.action_knight_to_day
